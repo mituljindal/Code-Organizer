@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZkO-sK-b1s">
+                                <rect key="frame" x="69" y="299" width="258" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="8Ju-Bx-52B"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="258" id="nS7-Ds-iVB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="tintColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="titleEdgeInsets" minX="-26" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-87" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Login" image="GitHub-Mark-32px">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.088964188550000003" green="0.8271711652" blue="0.96216261390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4xB-Nt-EGL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14509803921568626" green="0.16078431372549018" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZkO-sK-b1s" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="10.5" id="5ii-jK-801"/>
+                            <constraint firstItem="ZkO-sK-b1s" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-25.5" id="oy2-uC-daI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="ocB-L8-PR5">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="kmo-BB-UcE" customClass="WebViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pQ8-9j-RqA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3c-4k-y3g">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="Zpd-fc-M1y"/>
+                                </items>
+                            </navigationBar>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="20e-wD-j5V">
+                                <rect key="frame" x="0.0" y="44" width="375" height="2"/>
+                            </progressView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-CB-I3h">
+                                <rect key="frame" x="0.0" y="46" width="375" height="621"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="20e-wD-j5V" firstAttribute="top" secondItem="r3c-4k-y3g" secondAttribute="bottom" id="0eJ-cq-cR1"/>
+                            <constraint firstItem="r3c-4k-y3g" firstAttribute="leading" secondItem="20e-wD-j5V" secondAttribute="leading" id="Avf-Gd-09W"/>
+                            <constraint firstItem="20e-wD-j5V" firstAttribute="leading" secondItem="pQ8-9j-RqA" secondAttribute="leading" id="FNu-TZ-cQq"/>
+                            <constraint firstItem="r3c-4k-y3g" firstAttribute="top" secondItem="pQ8-9j-RqA" secondAttribute="top" id="LWl-r2-Qo3"/>
+                            <constraint firstAttribute="trailing" secondItem="jFJ-CB-I3h" secondAttribute="trailing" id="Zla-kC-OeZ"/>
+                            <constraint firstItem="aja-oO-6Sc" firstAttribute="bottom" secondItem="jFJ-CB-I3h" secondAttribute="bottom" id="hZO-y6-JoL"/>
+                            <constraint firstAttribute="trailing" secondItem="20e-wD-j5V" secondAttribute="trailing" id="ku6-ad-rU2"/>
+                            <constraint firstItem="jFJ-CB-I3h" firstAttribute="leading" secondItem="aja-oO-6Sc" secondAttribute="leading" id="nLz-Sf-3cO"/>
+                            <constraint firstItem="r3c-4k-y3g" firstAttribute="trailing" secondItem="20e-wD-j5V" secondAttribute="trailing" id="pmd-GA-O61"/>
+                            <constraint firstItem="jFJ-CB-I3h" firstAttribute="top" secondItem="20e-wD-j5V" secondAttribute="bottom" id="req-2E-ifg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aja-oO-6Sc"/>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="20e-wD-j5V" id="LDG-nd-yBu"/>
+                        <outlet property="webView" destination="jFJ-CB-I3h" id="hTQ-oJ-Ybj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Eg-yX-dpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724" y="34.632683658170919"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="GitHub-Mark-32px" width="32" height="32"/>
+    </resources>
+</document>

@@ -7,17 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51963F9932192E9AF2A3B364 /* Pods_GitHub_OnTheGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DADA4D1E2CF9D5719B65BC1 /* Pods_GitHub_OnTheGo.framework */; };
+		AC0C26481FB6E72300DB7DA0 /* GitHubClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0C26471FB6E72300DB7DA0 /* GitHubClient.swift */; };
+		AC6FD11B1FB622BE000CB8AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC6FD11A1FB622BE000CB8AC /* GoogleService-Info.plist */; };
+		AC8B69131FB5F175002D8104 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8B69121FB5F175002D8104 /* Constants.swift */; };
+		AC8B69191FB61639002D8104 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8B69181FB61639002D8104 /* WebViewController.swift */; };
 		ACC61A5A1FB5AC39007D9102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC61A591FB5AC39007D9102 /* AppDelegate.swift */; };
-		ACC61A5C1FB5AC39007D9102 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC61A5B1FB5AC39007D9102 /* ViewController.swift */; };
+		ACC61A5C1FB5AC39007D9102 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC61A5B1FB5AC39007D9102 /* LoginViewController.swift */; };
 		ACC61A5F1FB5AC39007D9102 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC61A5D1FB5AC39007D9102 /* Main.storyboard */; };
 		ACC61A611FB5AC39007D9102 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC61A601FB5AC39007D9102 /* Assets.xcassets */; };
 		ACC61A641FB5AC39007D9102 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC61A621FB5AC39007D9102 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DADA4D1E2CF9D5719B65BC1 /* Pods_GitHub_OnTheGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHub_OnTheGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8626EE4877D96BEDA47AE905 /* Pods-GitHub-OnTheGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub-OnTheGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHub-OnTheGo/Pods-GitHub-OnTheGo.debug.xcconfig"; sourceTree = "<group>"; };
+		9673CF8C9F6D5CAF0E8744AA /* Pods-GitHub-OnTheGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub-OnTheGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHub-OnTheGo/Pods-GitHub-OnTheGo.release.xcconfig"; sourceTree = "<group>"; };
+		AC0C26471FB6E72300DB7DA0 /* GitHubClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubClient.swift; sourceTree = "<group>"; };
+		AC6FD11A1FB622BE000CB8AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AC8B69121FB5F175002D8104 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AC8B69181FB61639002D8104 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		ACC61A561FB5AC39007D9102 /* GitHub-OnTheGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub-OnTheGo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC61A591FB5AC39007D9102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACC61A5B1FB5AC39007D9102 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACC61A5B1FB5AC39007D9102 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ACC61A5E1FB5AC39007D9102 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACC61A601FB5AC39007D9102 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACC61A631FB5AC39007D9102 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -29,17 +41,73 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51963F9932192E9AF2A3B364 /* Pods_GitHub_OnTheGo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D647DA62B79A5B2FC4498CF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8626EE4877D96BEDA47AE905 /* Pods-GitHub-OnTheGo.debug.xcconfig */,
+				9673CF8C9F6D5CAF0E8744AA /* Pods-GitHub-OnTheGo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4CFAFB561E5649884081710E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2DADA4D1E2CF9D5719B65BC1 /* Pods_GitHub_OnTheGo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC0C26441FB6D2BA00DB7DA0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		AC78743C1FB5B0FC00E5A29B /* Supporting-Files */ = {
+			isa = PBXGroup;
+			children = (
+				ACC61A591FB5AC39007D9102 /* AppDelegate.swift */,
+				ACC61A651FB5AC39007D9102 /* Info.plist */,
+				ACC61A5D1FB5AC39007D9102 /* Main.storyboard */,
+				AC6FD11A1FB622BE000CB8AC /* GoogleService-Info.plist */,
+			);
+			path = "Supporting-Files";
+			sourceTree = "<group>";
+		};
+		AC8B69111FB5F15D002D8104 /* Client-Github */ = {
+			isa = PBXGroup;
+			children = (
+				AC8B69121FB5F175002D8104 /* Constants.swift */,
+				AC0C26471FB6E72300DB7DA0 /* GitHubClient.swift */,
+			);
+			path = "Client-Github";
+			sourceTree = "<group>";
+		};
+		AC8B69171FB61622002D8104 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ACC61A5B1FB5AC39007D9102 /* LoginViewController.swift */,
+				AC8B69181FB61639002D8104 /* WebViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		ACC61A4D1FB5AC39007D9102 = {
 			isa = PBXGroup;
 			children = (
 				ACC61A581FB5AC39007D9102 /* GitHub-OnTheGo */,
 				ACC61A571FB5AC39007D9102 /* Products */,
+				3D647DA62B79A5B2FC4498CF /* Pods */,
+				4CFAFB561E5649884081710E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +122,22 @@
 		ACC61A581FB5AC39007D9102 /* GitHub-OnTheGo */ = {
 			isa = PBXGroup;
 			children = (
-				ACC61A591FB5AC39007D9102 /* AppDelegate.swift */,
-				ACC61A5B1FB5AC39007D9102 /* ViewController.swift */,
-				ACC61A5D1FB5AC39007D9102 /* Main.storyboard */,
-				ACC61A601FB5AC39007D9102 /* Assets.xcassets */,
-				ACC61A621FB5AC39007D9102 /* LaunchScreen.storyboard */,
-				ACC61A651FB5AC39007D9102 /* Info.plist */,
+				AC0C26441FB6D2BA00DB7DA0 /* Helper */,
+				ACDD1A331FB6CED200574C4A /* Assets */,
+				AC8B69171FB61622002D8104 /* ViewControllers */,
+				AC8B69111FB5F15D002D8104 /* Client-Github */,
+				AC78743C1FB5B0FC00E5A29B /* Supporting-Files */,
 			);
 			path = "GitHub-OnTheGo";
+			sourceTree = "<group>";
+		};
+		ACDD1A331FB6CED200574C4A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				ACC61A621FB5AC39007D9102 /* LaunchScreen.storyboard */,
+				ACC61A601FB5AC39007D9102 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +147,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACC61A681FB5AC39007D9102 /* Build configuration list for PBXNativeTarget "GitHub-OnTheGo" */;
 			buildPhases = (
+				E5477EC233D6ED4A5620756E /* [CP] Check Pods Manifest.lock */,
 				ACC61A521FB5AC39007D9102 /* Sources */,
 				ACC61A531FB5AC39007D9102 /* Frameworks */,
 				ACC61A541FB5AC39007D9102 /* Resources */,
+				4EAB1E096E82CAC427028606 /* [CP] Embed Pods Frameworks */,
+				40DD67F72AEDD75BE1F68B24 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACC61A641FB5AC39007D9102 /* LaunchScreen.storyboard in Resources */,
+				AC6FD11B1FB622BE000CB8AC /* GoogleService-Info.plist in Resources */,
 				ACC61A611FB5AC39007D9102 /* Assets.xcassets in Resources */,
 				ACC61A5F1FB5AC39007D9102 /* Main.storyboard in Resources */,
 			);
@@ -131,13 +211,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		40DD67F72AEDD75BE1F68B24 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GitHub-OnTheGo/Pods-GitHub-OnTheGo-resources.sh",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GitHub-OnTheGo/Pods-GitHub-OnTheGo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4EAB1E096E82CAC427028606 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GitHub-OnTheGo/Pods-GitHub-OnTheGo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GitHub-OnTheGo/Pods-GitHub-OnTheGo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5477EC233D6ED4A5620756E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GitHub-OnTheGo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ACC61A521FB5AC39007D9102 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACC61A5C1FB5AC39007D9102 /* ViewController.swift in Sources */,
+				AC0C26481FB6E72300DB7DA0 /* GitHubClient.swift in Sources */,
+				ACC61A5C1FB5AC39007D9102 /* LoginViewController.swift in Sources */,
 				ACC61A5A1FB5AC39007D9102 /* AppDelegate.swift in Sources */,
+				AC8B69131FB5F175002D8104 /* Constants.swift in Sources */,
+				AC8B69191FB61639002D8104 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,11 +418,12 @@
 		};
 		ACC61A691FB5AC39007D9102 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8626EE4877D96BEDA47AE905 /* Pods-GitHub-OnTheGo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NZGZ762EBZ;
-				INFOPLIST_FILE = "GitHub-OnTheGo/Info.plist";
+				INFOPLIST_FILE = "GitHub-OnTheGo/Supporting-Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mitul.GitHub-OnTheGo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -287,11 +434,12 @@
 		};
 		ACC61A6A1FB5AC39007D9102 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9673CF8C9F6D5CAF0E8744AA /* Pods-GitHub-OnTheGo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NZGZ762EBZ;
-				INFOPLIST_FILE = "GitHub-OnTheGo/Info.plist";
+				INFOPLIST_FILE = "GitHub-OnTheGo/Supporting-Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mitul.GitHub-OnTheGo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
