@@ -50,6 +50,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonPressed(_ sender: Any) {
         
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        controller.getOAuthUrl()
         present(controller, animated: true, completion: nil)
     }
 }

@@ -15,6 +15,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, UIBarPositionin
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var progressView: UIProgressView!
     
+    var url: URL!
     var request: URLRequest!
     
     override func viewDidLoad() {
@@ -22,9 +23,13 @@ class WebViewController: UIViewController, WKNavigationDelegate, UIBarPositionin
         webView.navigationDelegate = self
         webView.addObserver(self, forKeyPath: "", options: .new, context: nil)
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
-        let url = super.github.getAuthUrl()
         request = URLRequest(url: url)
         webView.load(request)
+        webView.scrollView.bounces = false
+    }
+    
+    func getOAuthUrl() {
+        url = super.github.getAuthUrl()
     }
     
     deinit { webView.removeObserver(self, forKeyPath: "estimatedProgress") }

@@ -6,27 +6,27 @@
 //  Copyright © 2017 mitul jindal. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import Alamofire
 
 class GitHubClient {
     
     static let sharedInstance = GitHubClient()
     var OAuthToken: String?
+    var header: HTTPHeaders!
     
     func hasAuthToken() -> Bool {
         if let _ = OAuthToken {
+            header = ["Authorization": "token \(self.OAuthToken!)"]
             return true
         } else if let token = UserDefaults.standard.string(forKey: "JWT") {
             OAuthToken = token
+            print("Setting header")
+            header = ["Authorization": "token \(token)"]
             return true
         } else {
             return false
         }
-    }
-    
-    func startOAuth2Login() {
-        
     }
     
     func getAuthUrl() -> URL {
@@ -78,6 +78,7 @@ class GitHubClient {
 //                                    Save the token
                                     self.OAuthToken = String(value)
                                     UserDefaults.standard.set(self.OAuthToken!, forKey: "JWT")
+                                    self.header = ["Authorization": "token \(self.OAuthToken!)"]
                                 default:
                                     print("")
                             }

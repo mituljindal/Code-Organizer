@@ -10,4 +10,9 @@ import UIKit
 
 class RepositoryViewController: UIViewController {
     
+    
+    override func viewDidLoad() {
+        
+        github.getRepositories()
+    }
 }
