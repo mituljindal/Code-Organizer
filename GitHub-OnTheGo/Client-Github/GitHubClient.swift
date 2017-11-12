@@ -14,8 +14,15 @@ class GitHubClient {
     static let sharedInstance = GitHubClient()
     var OAuthToken: String?
     
-    func hasAuthToken() {
-        
+    func hasAuthToken() -> Bool {
+        if let _ = OAuthToken {
+            return true
+        } else if let token = UserDefaults.standard.object(forKey: "JWT") {
+            OAuthToken = token as! String
+            return true
+        } else {
+            return false
+        }
     }
     
     func startOAuth2Login() {
@@ -67,6 +74,8 @@ class GitHubClient {
                             switch key {
                                 case "access_token":
                                     self.OAuthToken = String(value)
+                                    let x = UserDefaults.standard
+                                    x.setValue(self.OAuthToken, forKey: "JWT")
                                 default:
                                     print("")
                             }

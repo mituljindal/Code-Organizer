@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import Alamofire
 
-class WebViewController: UIViewController, WKNavigationDelegate {
+class WebViewController: UIViewController, WKNavigationDelegate, UIBarPositioningDelegate {
     
     let github = GitHubClient.sharedInstance
     
@@ -20,6 +20,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     var request: URLRequest!
     
     override func viewDidLoad() {
+//        view.backgroundColor = .black
         super.viewDidLoad()
         webView.navigationDelegate = self
         webView.addObserver(self, forKeyPath: "", options: .new, context: nil)
@@ -44,5 +45,17 @@ class WebViewController: UIViewController, WKNavigationDelegate {
                 self.dismiss(animated: true, completion: nil)
             }
         }
+    }
+    
+    @IBAction func cancelPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        return .topAttached
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
