@@ -15,8 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+//        Set the background color for all views
         window?.backgroundColor = .github
-        FirebaseApp.configure()
+        
+//        Status bar color set globally. For this to take effect, View controller-based status bar appearance has to be set to no in info.plist
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        if !GitHubClient.sharedInstance.hasAuthToken() {
+//            Change root view controller to LoginViewController
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        }
+//        FirebaseApp.configure()
         return true
     }
     

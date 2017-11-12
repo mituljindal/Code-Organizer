@@ -12,20 +12,17 @@ import Alamofire
 
 class WebViewController: UIViewController, WKNavigationDelegate, UIBarPositioningDelegate {
     
-    let github = GitHubClient.sharedInstance
-    
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var progressView: UIProgressView!
     
     var request: URLRequest!
     
     override func viewDidLoad() {
-//        view.backgroundColor = .black
         super.viewDidLoad()
         webView.navigationDelegate = self
         webView.addObserver(self, forKeyPath: "", options: .new, context: nil)
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
-        let url = github.getAuthUrl()
+        let url = super.github.getAuthUrl()
         request = URLRequest(url: url)
         webView.load(request)
     }
@@ -39,23 +36,19 @@ class WebViewController: UIViewController, WKNavigationDelegate, UIBarPositionin
         }
     }
     
-    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
-        github.processOAuthStep1Response(url: webView.url!) { complete in
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        
+        super.github.processOAuthStep1Response(url: webView.url!) { complete in
             if complete {
                 self.dismiss(animated: true, completion: nil)
+            } else {
+                self.presentAlert(title: "Authentication Error", error: "Please try again")
+                self.webView.load(self.request)
             }
         }
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
-        return .topAttached
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
 }

@@ -12,18 +12,8 @@ import Alamofire
 
 class LoginViewController: UIViewController {
     
-    let gitHub = GitHubClient.sharedInstance
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var token: String
-        if let _ = UserDefaults.standard.object(forKey: "JWT") {
-            token = UserDefaults.standard.object(forKey: "JWT") as! String
-            print("token: \(token)")
-        } else {
-            print("No token")
-        }
         
 //        let parameters: [String: Any] = [
 //            "name": "OnTheGo-GitHub",
@@ -48,13 +38,18 @@ class LoginViewController: UIViewController {
 //        }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if super.github.hasAuthToken() {
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "loggedIn") as! UINavigationController
+            present(controller, animated: false, completion: nil)
+        }
+    }
+    
     @IBAction func loginButtonPressed(_ sender: Any) {
         
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
         present(controller, animated: true, completion: nil)
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
 }

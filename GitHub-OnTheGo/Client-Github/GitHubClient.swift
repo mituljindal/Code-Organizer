@@ -17,8 +17,8 @@ class GitHubClient {
     func hasAuthToken() -> Bool {
         if let _ = OAuthToken {
             return true
-        } else if let token = UserDefaults.standard.object(forKey: "JWT") {
-            OAuthToken = token as! String
+        } else if let token = UserDefaults.standard.string(forKey: "JWT") {
+            OAuthToken = token
             return true
         } else {
             return false
@@ -36,8 +36,9 @@ class GitHubClient {
         return URL(string: urlString)!
     }
     
-    func processOAuthStep1Response(url: URL, completion: @escaping ((_ complete: Bool) -> (Void)))
-    {
+    func processOAuthStep1Response(url: URL, completion: @escaping ((_ complete: Bool) -> (Void))) {
+        
+//        Extract code from the redirect URL
         let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
         var code:String?
         if let queryItems = components?.queryItems {
@@ -48,11 +49,11 @@ class GitHubClient {
                 }
             }
         }
-        
         if let receivedCode = code {
             
             let getTokenPath:String = "https://github.com/login/oauth/access_token"
             let tokenParams = ["client_id": AuthValues.clientID, "client_secret": AuthValues.clientSecret, "code": receivedCode, "scope": AuthValues.state]
+//            Make request to get token
             Alamofire.request(getTokenPath, method: .post, parameters: tokenParams)
                 .validate()
                 .responseString { (response) in
@@ -64,6 +65,7 @@ class GitHubClient {
                         }
                         return
                     }
+                    
                     if let receivedResults = response.result.value {
                     
                         let resultParams = receivedResults.split(separator: "&")
@@ -73,9 +75,9 @@ class GitHubClient {
                             let value = resultsSplit[1]
                             switch key {
                                 case "access_token":
+//                                    Save the token
                                     self.OAuthToken = String(value)
-                                    let x = UserDefaults.standard
-                                    x.setValue(self.OAuthToken, forKey: "JWT")
+                                    UserDefaults.standard.set(self.OAuthToken!, forKey: "JWT")
                                 default:
                                     print("")
                             }
