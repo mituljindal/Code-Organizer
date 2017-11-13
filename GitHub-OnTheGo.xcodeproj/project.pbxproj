@@ -13,7 +13,7 @@
 		AC20C0BC1FB8EB4C0078B9FF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC20C0BB1FB8EB4C0078B9FF /* Model.swift */; };
 		AC20C0C01FB8F99B0078B9FF /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC20C0BE1FB8F99B0078B9FF /* Model.xcdatamodeld */; };
 		AC20C0C21FB8FAD10078B9FF /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC20C0C11FB8FAD00078B9FF /* CoreDataStack.swift */; };
-		AC2A24891FB8A66A00DBF6F2 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A24881FB8A66A00DBF6F2 /* RepositoryViewController.swift */; };
+		AC2A24891FB8A66A00DBF6F2 /* RepositoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A24881FB8A66A00DBF6F2 /* RepositoriesListViewController.swift */; };
 		AC2A248B1FB8BA9000DBF6F2 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A248A1FB8BA9000DBF6F2 /* UIViewControllerExtension.swift */; };
 		AC4F54671FB9AC4C00FEA193 /* Repository+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F54651FB9AC4C00FEA193 /* Repository+CoreDataProperties.swift */; };
 		AC4F54681FB9AC4C00FEA193 /* Repository+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F54661FB9AC4C00FEA193 /* Repository+CoreDataClass.swift */; };
@@ -37,7 +37,7 @@
 		AC20C0BB1FB8EB4C0078B9FF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AC20C0BF1FB8F99B0078B9FF /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		AC20C0C11FB8FAD00078B9FF /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		AC2A24881FB8A66A00DBF6F2 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
+		AC2A24881FB8A66A00DBF6F2 /* RepositoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListViewController.swift; sourceTree = "<group>"; };
 		AC2A248A1FB8BA9000DBF6F2 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		AC4F54651FB9AC4C00FEA193 /* Repository+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Repository+CoreDataProperties.swift"; path = "/Users/mituljindal/Desktop/GitHub-OnTheGo/GitHub-OnTheGo/CoreData/Repository+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		AC4F54661FB9AC4C00FEA193 /* Repository+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Repository+CoreDataClass.swift"; path = "/Users/mituljindal/Desktop/GitHub-OnTheGo/GitHub-OnTheGo/CoreData/Repository+CoreDataClass.swift"; sourceTree = "<absolute>"; };
@@ -130,7 +130,7 @@
 			children = (
 				ACC61A5B1FB5AC39007D9102 /* LoginViewController.swift */,
 				AC8B69181FB61639002D8104 /* WebViewController.swift */,
-				AC2A24881FB8A66A00DBF6F2 /* RepositoryViewController.swift */,
+				AC2A24881FB8A66A00DBF6F2 /* RepositoriesListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -319,7 +319,7 @@
 				ACC61A5A1FB5AC39007D9102 /* AppDelegate.swift in Sources */,
 				AC20C0C21FB8FAD10078B9FF /* CoreDataStack.swift in Sources */,
 				AC20C0BA1FB8E7C50078B9FF /* GitHubRepository.swift in Sources */,
-				AC2A24891FB8A66A00DBF6F2 /* RepositoryViewController.swift in Sources */,
+				AC2A24891FB8A66A00DBF6F2 /* RepositoriesListViewController.swift in Sources */,
 				AC20C0BC1FB8EB4C0078B9FF /* Model.swift in Sources */,
 				AC4F54681FB9AC4C00FEA193 /* Repository+CoreDataClass.swift in Sources */,
 				AC2A248B1FB8BA9000DBF6F2 /* UIViewControllerExtension.swift in Sources */,

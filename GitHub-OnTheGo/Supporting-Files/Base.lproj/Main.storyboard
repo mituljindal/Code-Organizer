@@ -117,7 +117,7 @@
         <!--Repositories-->
         <scene sceneID="NpH-qk-ybh">
             <objects>
-                <viewController id="Vot-4n-bNX" customClass="RepositoryViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Vot-4n-bNX" customClass="RepositoriesListViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WlR-4j-Abg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,6 +175,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D10-TL-Vse" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1772" y="738"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="W27-dr-2hk">
+            <objects>
+                <viewController id="VmH-mS-Ec7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KTO-2s-ra5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Gzt-9M-tJl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KNb-SS-cCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2514" y="739"/>
         </scene>
         <!--Item-->
         <scene sceneID="MBx-ss-3ZR">

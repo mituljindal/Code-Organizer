@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class RepositoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RepositoriesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     var fetchedResultsController : NSFetchedResultsController<NSFetchRequestResult>? {
@@ -58,15 +58,6 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//
-//        let repo = fetchedResultsController!.object(at: indexPath) as! Repository
-//        if let _ = repo.descriptionString {
-//            return (tableView.rowHeight * 2)
-//        }
-//        return tableView.rowHeight
-//    }
-    
     func executeSearch() {
         if let fc = fetchedResultsController {
             do {
@@ -78,7 +69,7 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 }
 
-extension RepositoryViewController: NSFetchedResultsControllerDelegate {
+extension RepositoriesListViewController: NSFetchedResultsControllerDelegate {
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
