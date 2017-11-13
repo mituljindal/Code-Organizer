@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class RepositoriesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RepositoriesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     var fetchedResultsController : NSFetchedResultsController<NSFetchRequestResult>? {
@@ -26,13 +26,16 @@ class RepositoriesListViewController: UIViewController, UITableViewDelegate, UIT
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.topItem?.title = "Repositories"
+        self.navigationController?.navigationBar.backItem?.title = ""
         
         let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "Repository")
         fr.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: super.appDelegate.stack.context, sectionNameKeyPath: nil, cacheName: nil)
         
-        github.getRepositories()
+        github.getRepositories() {
+            self.executeSearch()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,6 +44,15 @@ class RepositoriesListViewController: UIViewController, UITableViewDelegate, UIT
         } else {
             return 0
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "RepositoryView") as! RepositoryViewController
+        
+        controller.repo = fetchedResultsController!.object(at: indexPath) as! Repository
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,6 +74,7 @@ class RepositoriesListViewController: UIViewController, UITableViewDelegate, UIT
         if let fc = fetchedResultsController {
             do {
                 try fc.performFetch()
+                tableView.reloadData()
             } catch let e as NSError {
                 print("Error while trying to perform a search: \n\(e)\n\(fetchedResultsController!)")
             }
@@ -69,43 +82,3 @@ class RepositoriesListViewController: UIViewController, UITableViewDelegate, UIT
     }
 }
 
-extension RepositoriesListViewController: NSFetchedResultsControllerDelegate {
-    
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.beginUpdates()
-    }
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
-        
-        let set = IndexSet(integer: sectionIndex)
-        
-        switch (type) {
-        case .insert:
-            tableView.insertSections(set, with: .fade)
-        case .delete:
-            tableView.deleteSections(set, with: .fade)
-        default:
-            // irrelevant in our case
-            break
-        }
-    }
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        
-        switch(type) {
-        case .insert:
-            tableView.insertRows(at: [newIndexPath!], with: .fade)
-        case .delete:
-            tableView.deleteRows(at: [indexPath!], with: .fade)
-        case .update:
-            tableView.reloadRows(at: [indexPath!], with: .fade)
-        case .move:
-            tableView.deleteRows(at: [indexPath!], with: .fade)
-            tableView.insertRows(at: [newIndexPath!], with: .fade)
-        }
-    }
-    
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.endUpdates()
-    }
-}

@@ -31,7 +31,6 @@ extension GitHubClient {
             isPrivate = json["private"] as? Bool ?? false
             descriptionString = json["description"] as? String
             isFork = json["fork"] as? Bool ?? false
-//            createdAt
             stargazers = json["stargazers_count"] as? Int32 ?? 0
             watchers = json["watchers_count"] as? Int32 ?? 1
             forks = json["forks_count"] as? Int32 ?? 0

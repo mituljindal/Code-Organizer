@@ -12,7 +12,7 @@ import CoreData
 
 extension GitHubClient {
     
-    func getRepositories() {
+    func getRepositories(completion: @escaping () -> ()) {
         Alamofire.request(API.url + API.userReps, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseJSON() { response in
@@ -25,34 +25,30 @@ extension GitHubClient {
                     print("Can't convert any to Data")
                     return
                 }
+                
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Repository")
+                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+                
+                let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+                
+                do {
+                    try self.context.execute(batchDeleteRequest)
+                } catch {
+                    print("couldn't find object")
+                }
+                
                 do {
                     results = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [[String: Any]]
                     
                     for result in results {
-                        
-                        let repo = GRepository(json: result)
-                        
-                        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Repository")
-                        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
-                        fetchRequest.predicate = NSPredicate(format: "id = %d", repo.id)
-                        
-                        do {
-                            
-                            let objects = try self.context.count(for: fetchRequest)
-                            if objects > 0 {
-                                continue
-                            }
-                        } catch {
-                            print("couldn't find object")
-                        }
-                        
-                        let _ = Repository(repository: repo, context: self.context)
+                        let _ = Repository(json: result, context: self.context)
                     }
                     do {
                         try self.stack.saveContext()
                     } catch {
-                        print("deletion unsuccessful")
+                        print("save unsuccessful")
                     }
+                    completion()
                     
                 } catch {
                     return

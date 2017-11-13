@@ -176,10 +176,10 @@
             </objects>
             <point key="canvasLocation" x="1772" y="738"/>
         </scene>
-        <!--View Controller-->
+        <!--Repository View Controller-->
         <scene sceneID="W27-dr-2hk">
             <objects>
-                <viewController id="VmH-mS-Ec7" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RepositoryView" id="VmH-mS-Ec7" customClass="RepositoryViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KTO-2s-ra5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,7 +194,7 @@
         <!--Item-->
         <scene sceneID="MBx-ss-3ZR">
             <objects>
-                <navigationController storyboardIdentifier="loggedIn" automaticallyAdjustsScrollViewInsets="NO" id="Dn4-u9-i1r" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="loggedIn" automaticallyAdjustsScrollViewInsets="NO" id="Dn4-u9-i1r" customClass="CustomNavigationController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="2iT-qa-yGX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="72G-s2-NJe">
@@ -213,6 +213,9 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ap7-kX-YXB">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Yev-K2-ttV" kind="relationship" relationship="rootViewController" id="QrL-dB-9Zt"/>
                     </connections>

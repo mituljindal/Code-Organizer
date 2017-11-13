@@ -32,4 +32,24 @@ public class Repository: NSManagedObject {
             fatalError("Unable to find Entity name!")
         }
     }
+    
+    convenience init(json: [String: Any], context: NSManagedObjectContext) {
+        
+        if let ent = NSEntityDescription.entity(forEntityName: "Repository", in: context) {
+            self.init(entity: ent, insertInto: context)
+            
+            id = json["id"] as! Int64
+            name = json["name"] as? String ?? ""
+            fullName = json["full_name"] as? String ?? ""
+            isPrivate = json["private"] as? Bool ?? false
+            descriptionString = json["description"] as? String
+            isFork = json["fork"] as? Bool ?? false
+            stargazers = json["stargazers_count"] as? Int32 ?? 0
+            watchers = json["watchers_count"] as? Int32 ?? 1
+            forks = json["forks_count"] as? Int32 ?? 0
+            language = json["language"] as? String ?? ""
+        } else {
+            fatalError("Unable to find Entity name!")
+        }
+    }
 }
