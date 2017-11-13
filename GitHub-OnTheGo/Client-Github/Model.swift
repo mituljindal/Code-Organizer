@@ -12,27 +12,29 @@ extension GitHubClient {
     
     struct GRepository {
         
+        var id: Int64
         var name: String
         var fullName: String
         var isPrivate: Bool
-        var description: String?
+        var descriptionString: String?
         var isFork: Bool
 //        var createdAt: Date
-        var stargazers: Int
-        var watchers: Int
-        var forks: Int
+        var stargazers: Int32
+        var watchers: Int32
+        var forks: Int32
         var language: String
         
         init(json: [String: Any]) {
+            id = json["id"] as! Int64
             name = json["name"] as? String ?? ""
             fullName = json["full_name"] as? String ?? ""
             isPrivate = json["private"] as? Bool ?? false
-            description = json["description"] as? String
+            descriptionString = json["description"] as? String
             isFork = json["fork"] as? Bool ?? false
 //            createdAt
-            stargazers = json["stargazers_count"] as? Int ?? 0
-            watchers = json["watchers_count"] as? Int ?? 1
-            forks = json["forks_count"] as? Int ?? 0
+            stargazers = json["stargazers_count"] as? Int32 ?? 0
+            watchers = json["watchers_count"] as? Int32 ?? 1
+            forks = json["forks_count"] as? Int32 ?? 0
             language = json["language"] as? String ?? ""
         }
     }

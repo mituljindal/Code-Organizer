@@ -16,6 +16,12 @@ extension UIViewController {
         }
     }
     
+    var appDelegate: AppDelegate {
+        get {
+            return UIApplication.shared.delegate as! AppDelegate
+        }
+    }
+    
     func presentAlert(title: String, error: String) {
         let ac = UIAlertController(title: title, message: error, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))

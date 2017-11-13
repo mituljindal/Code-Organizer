@@ -6,14 +6,23 @@
 //  Copyright © 2017 mitul jindal. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Alamofire
+import CoreData
 
 class GitHubClient {
     
     static let sharedInstance = GitHubClient()
     var OAuthToken: String?
     var header: HTTPHeaders!
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var stack: CoreDataStack
+    var context: NSManagedObjectContext
+    
+    init() {
+        stack = appDelegate.stack
+        context = stack.context
+    }
     
     func hasAuthToken() -> Bool {
         if let _ = OAuthToken {
@@ -21,7 +30,6 @@ class GitHubClient {
             return true
         } else if let token = UserDefaults.standard.string(forKey: "JWT") {
             OAuthToken = token
-            print("Setting header")
             header = ["Authorization": "token \(token)"]
             return true
         } else {

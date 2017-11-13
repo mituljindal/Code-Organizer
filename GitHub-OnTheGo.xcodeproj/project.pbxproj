@@ -11,8 +11,12 @@
 		AC0C26481FB6E72300DB7DA0 /* GitHubClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0C26471FB6E72300DB7DA0 /* GitHubClient.swift */; };
 		AC20C0BA1FB8E7C50078B9FF /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC20C0B91FB8E7C50078B9FF /* GitHubRepository.swift */; };
 		AC20C0BC1FB8EB4C0078B9FF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC20C0BB1FB8EB4C0078B9FF /* Model.swift */; };
+		AC20C0C01FB8F99B0078B9FF /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC20C0BE1FB8F99B0078B9FF /* Model.xcdatamodeld */; };
+		AC20C0C21FB8FAD10078B9FF /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC20C0C11FB8FAD00078B9FF /* CoreDataStack.swift */; };
 		AC2A24891FB8A66A00DBF6F2 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A24881FB8A66A00DBF6F2 /* RepositoryViewController.swift */; };
 		AC2A248B1FB8BA9000DBF6F2 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A248A1FB8BA9000DBF6F2 /* UIViewControllerExtension.swift */; };
+		AC4F54671FB9AC4C00FEA193 /* Repository+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F54651FB9AC4C00FEA193 /* Repository+CoreDataProperties.swift */; };
+		AC4F54681FB9AC4C00FEA193 /* Repository+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F54661FB9AC4C00FEA193 /* Repository+CoreDataClass.swift */; };
 		AC6FD11B1FB622BE000CB8AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC6FD11A1FB622BE000CB8AC /* GoogleService-Info.plist */; };
 		AC8B69131FB5F175002D8104 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8B69121FB5F175002D8104 /* Constants.swift */; };
 		AC8B69191FB61639002D8104 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8B69181FB61639002D8104 /* WebViewController.swift */; };
@@ -31,8 +35,12 @@
 		AC0C26471FB6E72300DB7DA0 /* GitHubClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubClient.swift; sourceTree = "<group>"; };
 		AC20C0B91FB8E7C50078B9FF /* GitHubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepository.swift; sourceTree = "<group>"; };
 		AC20C0BB1FB8EB4C0078B9FF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		AC20C0BF1FB8F99B0078B9FF /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		AC20C0C11FB8FAD00078B9FF /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		AC2A24881FB8A66A00DBF6F2 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
 		AC2A248A1FB8BA9000DBF6F2 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		AC4F54651FB9AC4C00FEA193 /* Repository+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Repository+CoreDataProperties.swift"; path = "/Users/mituljindal/Desktop/GitHub-OnTheGo/GitHub-OnTheGo/CoreData/Repository+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		AC4F54661FB9AC4C00FEA193 /* Repository+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Repository+CoreDataClass.swift"; path = "/Users/mituljindal/Desktop/GitHub-OnTheGo/GitHub-OnTheGo/CoreData/Repository+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		AC6FD11A1FB622BE000CB8AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC8B69121FB5F175002D8104 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC8B69181FB61639002D8104 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +90,17 @@
 				AC2A248A1FB8BA9000DBF6F2 /* UIViewControllerExtension.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		AC20C0BD1FB8F9850078B9FF /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				AC4F54661FB9AC4C00FEA193 /* Repository+CoreDataClass.swift */,
+				AC4F54651FB9AC4C00FEA193 /* Repository+CoreDataProperties.swift */,
+				AC20C0C11FB8FAD00078B9FF /* CoreDataStack.swift */,
+				AC20C0BE1FB8F99B0078B9FF /* Model.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		AC78743C1FB5B0FC00E5A29B /* Supporting-Files */ = {
@@ -137,6 +156,7 @@
 		ACC61A581FB5AC39007D9102 /* GitHub-OnTheGo */ = {
 			isa = PBXGroup;
 			children = (
+				AC20C0BD1FB8F9850078B9FF /* CoreData */,
 				AC0C26441FB6D2BA00DB7DA0 /* Helper */,
 				ACDD1A331FB6CED200574C4A /* Assets */,
 				AC8B69171FB61622002D8104 /* ViewControllers */,
@@ -297,12 +317,16 @@
 				AC0C26481FB6E72300DB7DA0 /* GitHubClient.swift in Sources */,
 				ACC61A5C1FB5AC39007D9102 /* LoginViewController.swift in Sources */,
 				ACC61A5A1FB5AC39007D9102 /* AppDelegate.swift in Sources */,
+				AC20C0C21FB8FAD10078B9FF /* CoreDataStack.swift in Sources */,
 				AC20C0BA1FB8E7C50078B9FF /* GitHubRepository.swift in Sources */,
 				AC2A24891FB8A66A00DBF6F2 /* RepositoryViewController.swift in Sources */,
 				AC20C0BC1FB8EB4C0078B9FF /* Model.swift in Sources */,
+				AC4F54681FB9AC4C00FEA193 /* Repository+CoreDataClass.swift in Sources */,
 				AC2A248B1FB8BA9000DBF6F2 /* UIViewControllerExtension.swift in Sources */,
 				AC8B69131FB5F175002D8104 /* Constants.swift in Sources */,
 				AC8B69191FB61639002D8104 /* WebViewController.swift in Sources */,
+				AC4F54671FB9AC4C00FEA193 /* Repository+CoreDataProperties.swift in Sources */,
+				AC20C0C01FB8F99B0078B9FF /* Model.xcdatamodeld in Sources */,
 				ACEC94931FB87FFD00A4D127 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +487,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mitul.GitHub-OnTheGo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -490,6 +515,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AC20C0BE1FB8F99B0078B9FF /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AC20C0BF1FB8F99B0078B9FF /* Model.xcdatamodel */,
+			);
+			currentVersion = AC20C0BF1FB8F99B0078B9FF /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ACC61A4E1FB5AC39007D9102 /* Project object */;
 }
