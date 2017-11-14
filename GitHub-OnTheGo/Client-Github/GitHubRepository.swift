@@ -72,7 +72,39 @@ extension GitHubClient {
                         return
                     }
                     
-                    repo.list[index] = self.parseJson(data, index)
+                    var list = [String]()
+                    switch(index) {
+                    case 0:
+                        for item in data {
+                            list.append(item["title"] as? String ?? "")
+                        }
+                    case 1:
+                        for item in data {
+                            list.append(item["name"] as? String ?? "")
+                        }
+                    case 2:
+                        for item in data {
+                            let commit = item["commit"] as! [String: Any]
+                            list.append(commit["message"] as? String ?? "")
+                        }
+                    case 3:
+                        for item in data {
+                            list.append(item["title"] as? String ?? "")
+                        }
+//                    case 4:
+//                        for item in data {
+//                            let str = item["name"] as? String ?? ""
+//                            list.append(str)
+//
+//                            let x = self.parseContent(item: item)
+//
+//                            repo.content[str] = x
+//                        }
+                    default:
+                        fatalError("Extraneous index")
+                    }
+                    
+                    repo.list[index] = list
                     DispatchQueue.main.async {
                         completion()
                     }
@@ -84,34 +116,107 @@ extension GitHubClient {
             }
     }
     
-    func parseJson(_ data: [[String: Any]], _ index: Int) -> [String] {
+    func getContent(content: Content, completion: @escaping () -> ()) {
         
-        var list = [String]()
-        switch(index) {
-        case 0:
-            for item in data {
-                list.append(item["title"] as? String ?? "")
-            }
-        case 1:
-            for item in data {
-                list.append(item["name"] as? String ?? "")
-            }
-        case 2:
-            for item in data {
-                let commit = item["commit"] as! [String: Any]
-                list.append(commit["message"] as? String ?? "")
-            }
-        case 3:
-            for item in data {
-                list.append(item["title"] as? String ?? "")
-            }
-        case 4:
-            for item in data {
-                list.append(item["name"] as? String ?? "")
-            }
-        default:
-            return [String]()
+        let url = content.url!
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+            .validate()
+            .responseJSON() { response in
+                
+                if let error = response.error {
+                    print("error: \(error)")
+                    return
+                }
+                
+                guard let data = response.data else {
+                    print("no data")
+                    return
+                }
+                
+                var result: [[String: Any]]
+                
+                do {
+                    result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [[String: Any]]
+                } catch {
+                    print("couldn't convert data")
+                    return
+                }
+                
+                content.content = [Content]()
+                
+                for item in result {
+                    let temp = Content()
+                    temp.name = item["name"] as! String
+                    temp.url = item["url"] as! String
+                    temp.downloadURL = item["download_url"] as? String
+                    temp.content = [Content]()
+                    content.content?.append(temp)
+                }
+                
+                DispatchQueue.main.async {
+                    completion()
+                }
         }
-        return list
     }
+    
+    func downloadText(content: Content, completion: @escaping () -> ()) {
+        
+        let url = content.downloadURL!
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+            .validate()
+            .responseString() { response in
+                
+//                print(response.value)
+                content.text = response.value
+                completion()
+        }
+    }
+    
+//    func getContent(repo: Repository, content: Content, completion: @escaping (_ isContent: Bool) -> ()) {
+    
+//        print(repo.content)
+//        return
+//
+//        let x = repo.content[name] as! [String: String]
+//
+//        let url: String
+//
+//        if let download = x["downloadURL"] {
+//            url = download
+//
+//            print("url: \(url)")
+//            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+//                .validate()
+//                .responseString() { response in
+//
+//                    print("printing here")
+//                    print(response.value)
+//
+//                    DispatchQueue.main.async {
+//                        completion(true)
+//                    }
+//            }
+//
+//        } else {
+//            url = x["contentsURL"]!
+//            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+//                .validate()
+//                .responseJSON() { response in
+//
+//                    if response.error != nil {
+//                        print(response.error!)
+//                        return
+//                    }
+//
+//                    print("value: \(response)")
+//                    DispatchQueue.main.async {
+//                        completion(false)
+//                    }
+//            }
+//        }
+//
+        
+//    }
 }

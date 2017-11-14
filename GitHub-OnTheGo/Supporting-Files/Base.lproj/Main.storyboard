@@ -316,6 +316,66 @@
             </objects>
             <point key="canvasLocation" x="3222" y="740"/>
         </scene>
+        <!--Content Display View Controller-->
+        <scene sceneID="8ZZ-1h-ghq">
+            <objects>
+                <viewController storyboardIdentifier="ContentDisplayViewController" id="mzd-dT-AcS" customClass="ContentDisplayViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PS8-2k-ptM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6F-Y0-Xmr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XpJ-eI-ncZ" firstAttribute="trailing" secondItem="I6F-Y0-Xmr" secondAttribute="trailing" id="AE7-vu-ezi"/>
+                            <constraint firstItem="I6F-Y0-Xmr" firstAttribute="top" secondItem="XpJ-eI-ncZ" secondAttribute="top" id="XyK-bc-9Hn"/>
+                            <constraint firstItem="I6F-Y0-Xmr" firstAttribute="leading" secondItem="XpJ-eI-ncZ" secondAttribute="leading" id="Yfz-Ap-3WS"/>
+                            <constraint firstItem="XpJ-eI-ncZ" firstAttribute="bottom" secondItem="I6F-Y0-Xmr" secondAttribute="bottom" id="tdF-TC-YCo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XpJ-eI-ncZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentTextView" destination="I6F-Y0-Xmr" id="wmO-PZ-YfS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Lj-cs-bsQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4646" y="742"/>
+        </scene>
+        <!--Content List View Controller-->
+        <scene sceneID="N3R-J0-YDv">
+            <objects>
+                <tableViewController storyboardIdentifier="ContentListViewController" id="02Z-fR-DIP" customClass="ContentListViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Sx3-C7-wlV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContentCell" id="k5n-OV-RJH">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k5n-OV-RJH" id="svG-Dc-PDM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="02Z-fR-DIP" id="HwP-Cp-jJa"/>
+                            <outlet property="delegate" destination="02Z-fR-DIP" id="dWp-6o-dtN"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aSF-f5-OXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3943" y="744"/>
+        </scene>
         <!--Item-->
         <scene sceneID="MBx-ss-3ZR">
             <objects>

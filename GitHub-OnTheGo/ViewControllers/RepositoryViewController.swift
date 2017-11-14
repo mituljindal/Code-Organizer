@@ -37,7 +37,7 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
         
         self.navigationItem.title = repo.name
         
-        repo.listInit()
+        repo.custInit()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,10 +66,17 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "RepositoryDataViewController") as! RepositoryDataViewController
-        
-        controller.index = indexPath.row
-        controller.repo = repo
-        self.navigationController?.pushViewController(controller, animated: true)
+        if indexPath.row != 4 {
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "RepositoryDataViewController") as! RepositoryDataViewController
+            
+            controller.index = indexPath.row
+            controller.repo = repo
+            self.navigationController?.pushViewController(controller, animated: true)
+        } else {
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "ContentListViewController") as! ContentListViewController
+//            controller.repo = repo
+            controller.content = repo.content
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
 }

@@ -13,6 +13,7 @@ import CoreData
 public class Repository: NSManagedObject {
     
     var list = [Int: [String]]()
+    var content = Content()
     
     convenience init(json: [String: Any], context: NSManagedObjectContext) {
         
@@ -35,10 +36,15 @@ public class Repository: NSManagedObject {
         }
     }
     
-    func listInit() {
-        for i in 0..<5 {
+    func custInit() {
+        for i in 0..<4 {
             list[i] = [String]()
         }
+        
+        content.name = "Source"
+        content.downloadURL = nil
+        content.url = urlString! + "/contents"
+        content.content = [Content]()
     }
     
     func getType(index: Int) -> String {
@@ -70,8 +76,8 @@ public class Repository: NSManagedObject {
             return "/commits"
         case 3:
             return "/pulls"
-        case 4:
-            return "/contents"
+//        case 4:
+//            return "/contents"
         default:
             return ""
         }

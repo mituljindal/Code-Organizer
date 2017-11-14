@@ -37,4 +37,21 @@ class RepositoryDataViewController: UITableViewController {
         cell.textLabel?.text = repo.list[index]![indexPath.row]
         return cell
     }
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        
+//        if index != 4 {
+//            return
+//        }
+//        
+//        github.getContent(repo: repo, name: repo.list[index]![indexPath.row]) { isContent in
+//            
+//            if isContent {
+//                print("opening file")
+//            } else {
+//                print("opening table")
+//            }
+//        }
+//    }
 }
