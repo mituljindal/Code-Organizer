@@ -21,8 +21,6 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var repo: Repository!
     
-//    let optionsArray = ["Issues", "Branches", "Commits", "Pull Requests", "Source"]
-    
     override func viewDidLoad() {
         starsTextView.text = "\(repo.stargazers)\nStars"
         forksTextView.text = "\(repo.forks)\nForks"
@@ -38,6 +36,8 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         
         self.navigationItem.title = repo.name
+        
+        repo.listInit()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +54,7 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LinkCells", for: indexPath)
         
-        cell.textLabel?.text = repo.getType(indexPath: indexPath)
+        cell.textLabel?.text = repo.getType(index: indexPath.row)
         cell.accessoryType = .disclosureIndicator
         return cell
     }
@@ -68,7 +68,7 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "RepositoryDataViewController") as! RepositoryDataViewController
         
-        controller.indexPath = indexPath
+        controller.index = indexPath.row
         controller.repo = repo
         self.navigationController?.pushViewController(controller, animated: true)
     }

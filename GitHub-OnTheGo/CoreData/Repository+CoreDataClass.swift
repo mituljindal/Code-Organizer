@@ -11,27 +11,8 @@ import CoreData
 
 @objc(Repository)
 public class Repository: NSManagedObject {
-
-    convenience init(repository: GitHubClient.GRepository, context: NSManagedObjectContext) {
-        
-        if let ent = NSEntityDescription.entity(forEntityName: "Repository", in: context) {
-            //            Default init
-            self.init(entity: ent, insertInto: context)
-            
-            self.id = repository.id
-            self.descriptionString = repository.descriptionString
-            self.forks =  repository.forks
-            self.urlString = repository.urlString
-            self.isFork = repository.isFork
-            self.isPrivate = repository.isPrivate
-            self.language = repository.language
-            self.name = repository.name
-            self.stargazers = repository.stargazers
-            self.watchers = repository.watchers
-        } else {
-            fatalError("Unable to find Entity name!")
-        }
-    }
+    
+    var list = [Int: [String]]()
     
     convenience init(json: [String: Any], context: NSManagedObjectContext) {
         
@@ -48,14 +29,21 @@ public class Repository: NSManagedObject {
             watchers = json["watchers_count"] as? Int32 ?? 1
             forks = json["forks_count"] as? Int32 ?? 0
             language = json["language"] as? String ?? ""
+            
         } else {
             fatalError("Unable to find Entity name!")
         }
     }
     
-    func getType(indexPath: IndexPath) -> String {
+    func listInit() {
+        for i in 0..<5 {
+            list[i] = [String]()
+        }
+    }
+    
+    func getType(index: Int) -> String {
         
-        switch indexPath.row {
+        switch index {
         case 0:
             return "Issues"
         case 1:
@@ -70,4 +58,23 @@ public class Repository: NSManagedObject {
             return ""
         }
     }
+    
+    func getUrlPath(_ index: Int) -> String {
+        
+        switch index {
+        case 0:
+            return "/issues"
+        case 1:
+            return "/branches"
+        case 2:
+            return "/commits"
+        case 3:
+            return "/pulls"
+        case 4:
+            return "/contents"
+        default:
+            return ""
+        }
+    }
+    
 }

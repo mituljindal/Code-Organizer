@@ -10,32 +10,31 @@ import UIKit
 
 class RepositoryDataViewController: UITableViewController {
     
-    var indexPath: IndexPath!
-    var list = [String]()
+    var index: Int!
     var repo: Repository!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = repo.getType(indexPath: indexPath)
+        self.navigationItem.title = repo.getType(index: index)
         getData()
     }
     
     func getData() {
-        print("getting data")
-//        github.getDetails(repo: repo, type: type) { list in
-//            self.list = list
-//        }
+        
+        github.getDetails(repo: repo, index: index) {
+            self.tableView.reloadData()
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return repo.list[index]!.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath)
         
-        cell.textLabel?.text = list[indexPath.row]
+        cell.textLabel?.text = repo.list[index]![indexPath.row]
         return cell
     }
 }

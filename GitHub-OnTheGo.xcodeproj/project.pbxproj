@@ -11,7 +11,6 @@
 		AC0C26481FB6E72300DB7DA0 /* GitHubClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0C26471FB6E72300DB7DA0 /* GitHubClient.swift */; };
 		AC1B5A0E1FBA440800387808 /* Repository+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1B5A0D1FBA440800387808 /* Repository+CoreDataProperties.swift */; };
 		AC20C0BA1FB8E7C50078B9FF /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC20C0B91FB8E7C50078B9FF /* GitHubRepository.swift */; };
-		AC20C0BC1FB8EB4C0078B9FF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC20C0BB1FB8EB4C0078B9FF /* Model.swift */; };
 		AC20C0C01FB8F99B0078B9FF /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC20C0BE1FB8F99B0078B9FF /* Model.xcdatamodeld */; };
 		AC20C0C21FB8FAD10078B9FF /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC20C0C11FB8FAD00078B9FF /* CoreDataStack.swift */; };
 		AC283C541FB9BD0C00DC018C /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC283C531FB9BD0C00DC018C /* RepositoryViewController.swift */; };
@@ -39,7 +38,6 @@
 		AC0C26471FB6E72300DB7DA0 /* GitHubClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubClient.swift; sourceTree = "<group>"; };
 		AC1B5A0D1FBA440800387808 /* Repository+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Repository+CoreDataProperties.swift"; path = "/Users/mituljindal/Desktop/GitHub-OnTheGo/GitHub-OnTheGo/CoreData/Repository+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		AC20C0B91FB8E7C50078B9FF /* GitHubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepository.swift; sourceTree = "<group>"; };
-		AC20C0BB1FB8EB4C0078B9FF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AC20C0BF1FB8F99B0078B9FF /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		AC20C0C11FB8FAD00078B9FF /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		AC283C531FB9BD0C00DC018C /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 				AC8B69121FB5F175002D8104 /* Constants.swift */,
 				AC0C26471FB6E72300DB7DA0 /* GitHubClient.swift */,
 				AC20C0B91FB8E7C50078B9FF /* GitHubRepository.swift */,
-				AC20C0BB1FB8EB4C0078B9FF /* Model.swift */,
 			);
 			path = "Client-Github";
 			sourceTree = "<group>";
@@ -336,7 +333,6 @@
 				AC2A24891FB8A66A00DBF6F2 /* RepositoriesListViewController.swift in Sources */,
 				AC283C5E1FBA323400DC018C /* RepositoryDataViewController.swift in Sources */,
 				AC283C561FB9C5DD00DC018C /* NavigationControllerExtension.swift in Sources */,
-				AC20C0BC1FB8EB4C0078B9FF /* Model.swift in Sources */,
 				AC4F54681FB9AC4C00FEA193 /* Repository+CoreDataClass.swift in Sources */,
 				AC2A248B1FB8BA9000DBF6F2 /* UIViewControllerExtension.swift in Sources */,
 				AC8B69131FB5F175002D8104 /* Constants.swift in Sources */,
