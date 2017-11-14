@@ -168,55 +168,8 @@ extension GitHubClient {
             .validate()
             .responseString() { response in
                 
-//                print(response.value)
                 content.text = response.value
                 completion()
         }
     }
-    
-//    func getContent(repo: Repository, content: Content, completion: @escaping (_ isContent: Bool) -> ()) {
-    
-//        print(repo.content)
-//        return
-//
-//        let x = repo.content[name] as! [String: String]
-//
-//        let url: String
-//
-//        if let download = x["downloadURL"] {
-//            url = download
-//
-//            print("url: \(url)")
-//            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
-//                .validate()
-//                .responseString() { response in
-//
-//                    print("printing here")
-//                    print(response.value)
-//
-//                    DispatchQueue.main.async {
-//                        completion(true)
-//                    }
-//            }
-//
-//        } else {
-//            url = x["contentsURL"]!
-//            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
-//                .validate()
-//                .responseJSON() { response in
-//
-//                    if response.error != nil {
-//                        print(response.error!)
-//                        return
-//                    }
-//
-//                    print("value: \(response)")
-//                    DispatchQueue.main.async {
-//                        completion(false)
-//                    }
-//            }
-//        }
-//
-        
-//    }
 }

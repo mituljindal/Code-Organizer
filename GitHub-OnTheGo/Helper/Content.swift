@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Required for managing source code files
 class Content {
     
     public var name: String!

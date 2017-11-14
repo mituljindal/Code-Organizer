@@ -22,27 +22,26 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
     var repo: Repository!
     
     override func viewDidLoad() {
+        
+//        Setting data values
         starsTextView.text = "\(repo.stargazers)\nStars"
         forksTextView.text = "\(repo.forks)\nForks"
         watchersTextView.text = "\(repo.watchers)\nWatchers"
         
         publicTextView.text = repo.isPrivate ? "Private": "Public"
-        
         languageTextView.text = repo.language
-        
         
         tableView.bounces = false
         
         super.viewDidLoad()
-        
         self.navigationItem.title = repo.name
-        
+//        For detail views data initialization
         repo.custInit()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+//        Vertically center align the text views
         publicTextView.centerTextVertically()
         languageTextView.centerTextVertically()
     }
@@ -66,6 +65,7 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+//        For details other than content
         if indexPath.row != 4 {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "RepositoryDataViewController") as! RepositoryDataViewController
             
@@ -73,8 +73,8 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
             controller.repo = repo
             self.navigationController?.pushViewController(controller, animated: true)
         } else {
+//            For Content
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "ContentListViewController") as! ContentListViewController
-//            controller.repo = repo
             controller.content = repo.content
             self.navigationController?.pushViewController(controller, animated: true)
         }

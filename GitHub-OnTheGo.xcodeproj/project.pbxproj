@@ -32,6 +32,7 @@
 		ACC61A611FB5AC39007D9102 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC61A601FB5AC39007D9102 /* Assets.xcassets */; };
 		ACC61A641FB5AC39007D9102 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC61A621FB5AC39007D9102 /* LaunchScreen.storyboard */; };
 		ACEC94931FB87FFD00A4D127 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC94921FB87FFD00A4D127 /* UIColorExtension.swift */; };
+		ACFEF2A11FBB633D00A348D8 /* GitHubOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFEF2A01FBB633D00A348D8 /* GitHubOAuth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		ACC61A631FB5AC39007D9102 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACC61A651FB5AC39007D9102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACEC94921FB87FFD00A4D127 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		ACFEF2A01FBB633D00A348D8 /* GitHubOAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubOAuth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				AC8B69121FB5F175002D8104 /* Constants.swift */,
 				AC0C26471FB6E72300DB7DA0 /* GitHubClient.swift */,
 				AC20C0B91FB8E7C50078B9FF /* GitHubRepository.swift */,
+				ACFEF2A01FBB633D00A348D8 /* GitHubOAuth.swift */,
 			);
 			path = "Client-Github";
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				ACC61A5C1FB5AC39007D9102 /* LoginViewController.swift in Sources */,
 				ACC61A5A1FB5AC39007D9102 /* AppDelegate.swift in Sources */,
 				AC20C0C21FB8FAD10078B9FF /* CoreDataStack.swift in Sources */,
+				ACFEF2A11FBB633D00A348D8 /* GitHubOAuth.swift in Sources */,
 				AC283C541FB9BD0C00DC018C /* RepositoryViewController.swift in Sources */,
 				AC20C0BA1FB8E7C50078B9FF /* GitHubRepository.swift in Sources */,
 				AC2A24891FB8A66A00DBF6F2 /* RepositoriesListViewController.swift in Sources */,

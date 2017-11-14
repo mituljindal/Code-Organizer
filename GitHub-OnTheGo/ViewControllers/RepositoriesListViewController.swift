@@ -14,8 +14,7 @@ class RepositoriesListViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var tableView: UITableView!
     var fetchedResultsController : NSFetchedResultsController<NSFetchRequestResult>? {
         didSet {
-            // Whenever the frc changes, we execute the search and
-            // reload the table
+            // Whenever the frc changes, we execute the search and reload the table
             fetchedResultsController?.delegate = self
             executeSearch()
             tableView.reloadData()
@@ -26,13 +25,14 @@ class RepositoriesListViewController: UIViewController, UITableViewDelegate, UIT
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.topItem?.title = "Repositories"
-        self.navigationController?.navigationBar.backItem?.title = ""
         
+//        Setting fetch requests
         let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "Repository")
         fr.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: super.appDelegate.stack.context, sectionNameKeyPath: nil, cacheName: nil)
         
+//        Get repositories
         github.getRepositories() {
             self.executeSearch()
         }

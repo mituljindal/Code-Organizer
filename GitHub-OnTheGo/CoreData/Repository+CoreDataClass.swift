@@ -36,17 +36,21 @@ public class Repository: NSManagedObject {
         }
     }
     
+//    Custom init
     func custInit() {
+//        Initializing empty dictionary for details other than Source(Content)
         for i in 0..<4 {
             list[i] = [String]()
         }
         
+//        Initializing empty first content array
         content.name = "Source"
         content.downloadURL = nil
         content.url = urlString! + "/contents"
         content.content = [Content]()
     }
     
+//    For displaying different types
     func getType(index: Int) -> String {
         
         switch index {
@@ -65,6 +69,7 @@ public class Repository: NSManagedObject {
         }
     }
     
+//    For constructing urls
     func getUrlPath(_ index: Int) -> String {
         
         switch index {
@@ -76,8 +81,6 @@ public class Repository: NSManagedObject {
             return "/commits"
         case 3:
             return "/pulls"
-//        case 4:
-//            return "/contents"
         default:
             return ""
         }

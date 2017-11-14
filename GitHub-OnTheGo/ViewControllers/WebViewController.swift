@@ -20,14 +20,16 @@ class WebViewController: UIViewController, WKNavigationDelegate, UIBarPositionin
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         webView.navigationDelegate = self
-        webView.addObserver(self, forKeyPath: "", options: .new, context: nil)
+//        Observer for progress bar
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         request = URLRequest(url: url)
         webView.load(request)
         webView.scrollView.bounces = false
     }
     
+//    Called by login view controller to get OAuth URL
     func getOAuthUrl() {
         url = super.github.getAuthUrl()
     }
@@ -36,6 +38,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, UIBarPositionin
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if (keyPath == "estimatedProgress") {
+//            Associating progress bar with webview progress
             progressView.isHidden = webView.estimatedProgress == 1
             progressView.setProgress(Float(webView.estimatedProgress), animated: true)
         }
@@ -43,6 +46,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, UIBarPositionin
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
+//        Processing the url from OAuth step 1
         super.github.processOAuthStep1Response(url: webView.url!) { complete in
             if complete {
                 self.dismiss(animated: true, completion: nil)

@@ -15,6 +15,7 @@ class CustomNavigationController: UINavigationController, UINavigationController
         self.delegate = self
     }
     
+//    To remove the back button title
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         viewController.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
     }

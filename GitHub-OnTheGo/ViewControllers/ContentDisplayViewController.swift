@@ -16,7 +16,7 @@ class ContentDisplayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+//        Get File content and display
         github.downloadText(content: content) {
             print("in completion")
             self.contentTextView.text = self.content.text

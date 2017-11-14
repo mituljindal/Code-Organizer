@@ -17,11 +17,8 @@ class RepositoryDataViewController: UITableViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = repo.getType(index: index)
-        getData()
-    }
-    
-    func getData() {
         
+//        Get Data
         github.getDetails(repo: repo, index: index) {
             self.tableView.reloadData()
         }
@@ -38,20 +35,7 @@ class RepositoryDataViewController: UITableViewController {
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        
-//        if index != 4 {
-//            return
-//        }
-//        
-//        github.getContent(repo: repo, name: repo.list[index]![indexPath.row]) { isContent in
-//            
-//            if isContent {
-//                print("opening file")
-//            } else {
-//                print("opening table")
-//            }
-//        }
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

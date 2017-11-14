@@ -20,12 +20,14 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+//        If OAuth token is present, present repositories
         if super.github.hasAuthToken() {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "loggedIn") as! UINavigationController
             present(controller, animated: false, completion: nil)
         }
     }
     
+//    Open webview for Authentication
     @IBAction func loginButtonPressed(_ sender: Any) {
         
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController

@@ -10,17 +10,16 @@ import UIKit
 
 class ContentListViewController: UITableViewController {
     
-//    var repo: Repository!
     var content: Content!
     
     override func viewDidLoad() {
         
+//        Get Data
         github.getContent(content: content) {
             self.tableView.reloadData()
         }
         
         super.viewDidLoad()
-        
         self.navigationItem.title = content.name
     }
     
@@ -37,12 +36,14 @@ class ContentListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+//        If file
         if content.content![indexPath.row].downloadURL != nil {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "ContentDisplayViewController") as! ContentDisplayViewController
             
             controller.content = content.content![indexPath.row]
             self.navigationController?.pushViewController(controller, animated: true)
             
+//            If Directory
         } else {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "ContentListViewController") as! ContentListViewController
             

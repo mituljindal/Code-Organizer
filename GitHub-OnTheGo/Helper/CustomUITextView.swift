@@ -14,7 +14,7 @@ class CustomUITextView: UITextView {
         super.init(frame: frame, textContainer: textContainer)
 
         self.layer.borderColor = UIColor.gray.cgColor
-        self.layer.borderWidth = 0.22
+        self.layer.borderWidth = 0.225
         self.textAlignment = .center
 
         centerTextVertically()
@@ -23,6 +23,7 @@ class CustomUITextView: UITextView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
+//        Text view border set and aligning text to center
         self.layer.borderColor = UIColor.gray.cgColor
         self.layer.borderWidth = 0.225
         self.textAlignment = .center
@@ -30,6 +31,7 @@ class CustomUITextView: UITextView {
         centerTextVertically()
     }
     
+//    Vertical Center Alignment
     func centerTextVertically() {
         
         let fittingSize = CGSize(width: bounds.width, height: CGFloat.greatestFiniteMagnitude)

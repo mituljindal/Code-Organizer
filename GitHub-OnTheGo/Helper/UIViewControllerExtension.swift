@@ -10,6 +10,8 @@ import UIKit
 
 extension UIViewController {
     
+//    created GitHubClient and AppDelegate instances so that it's not required to create in every view controller
+    
     var github: GitHubClient {
         get {
             return GitHubClient.sharedInstance
@@ -22,6 +24,7 @@ extension UIViewController {
         }
     }
     
+//    For presenting alerts
     func presentAlert(title: String, error: String) {
         let ac = UIAlertController(title: title, message: error, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))

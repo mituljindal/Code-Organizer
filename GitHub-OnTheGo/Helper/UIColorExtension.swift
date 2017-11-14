@@ -9,6 +9,6 @@
 import UIKit
 
 extension UIColor {
-    
+//    Custom color
     static var github = UIColor(red: 37/255, green: 41/255, blue: 46/255, alpha: 1)
 }
