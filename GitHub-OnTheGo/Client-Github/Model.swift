@@ -14,11 +14,10 @@ extension GitHubClient {
         
         var id: Int64
         var name: String
-        var fullName: String
+        var urlString: String
         var isPrivate: Bool
         var descriptionString: String?
         var isFork: Bool
-//        var createdAt: Date
         var stargazers: Int32
         var watchers: Int32
         var forks: Int32
@@ -27,7 +26,7 @@ extension GitHubClient {
         init(json: [String: Any]) {
             id = json["id"] as! Int64
             name = json["name"] as? String ?? ""
-            fullName = json["full_name"] as? String ?? ""
+            urlString = json["url"] as? String ?? ""
             isPrivate = json["private"] as? Bool ?? false
             descriptionString = json["description"] as? String
             isFork = json["fork"] as? Bool ?? false

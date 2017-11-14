@@ -20,7 +20,6 @@ extension GitHubClient {
                     print("error: \(error)")
                 }
                 
-                var results: [[String: Any]]
                 guard let data = response.data else {
                     print("Can't convert any to Data")
                     return
@@ -38,7 +37,7 @@ extension GitHubClient {
                 }
                 
                 do {
-                    results = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [[String: Any]]
+                    let results = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [[String: Any]]
                     
                     for result in results {
                         let _ = Repository(json: result, context: self.context)
@@ -55,4 +54,23 @@ extension GitHubClient {
                 }
             }
     }
+    
+//    func getDetails(repo: Repository, type: String, completion: @escaping (_ list: [String]) -> ()) {
+//
+//        let url = repo.urlString! + "/" + type.lowercased()
+//
+//        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+//            .validate()
+//            .responseJSON() { response in
+//
+//                if let error = response.error {
+//                    print("error: \(error)")
+//                }
+//
+//                print(response.value!)
+////                print(response.result)
+////                print(response.data!)
+//
+//            }
+//    }
 }

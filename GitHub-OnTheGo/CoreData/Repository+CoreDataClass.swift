@@ -15,13 +15,13 @@ public class Repository: NSManagedObject {
     convenience init(repository: GitHubClient.GRepository, context: NSManagedObjectContext) {
         
         if let ent = NSEntityDescription.entity(forEntityName: "Repository", in: context) {
-//            Default init
+            //            Default init
             self.init(entity: ent, insertInto: context)
             
             self.id = repository.id
             self.descriptionString = repository.descriptionString
             self.forks =  repository.forks
-            self.fullName = repository.fullName
+            self.urlString = repository.urlString
             self.isFork = repository.isFork
             self.isPrivate = repository.isPrivate
             self.language = repository.language
@@ -40,7 +40,7 @@ public class Repository: NSManagedObject {
             
             id = json["id"] as! Int64
             name = json["name"] as? String ?? ""
-            fullName = json["full_name"] as? String ?? ""
+            urlString = json["url"] as? String ?? ""
             isPrivate = json["private"] as? Bool ?? false
             descriptionString = json["description"] as? String
             isFork = json["fork"] as? Bool ?? false
@@ -50,6 +50,24 @@ public class Repository: NSManagedObject {
             language = json["language"] as? String ?? ""
         } else {
             fatalError("Unable to find Entity name!")
+        }
+    }
+    
+    func getType(indexPath: IndexPath) -> String {
+        
+        switch indexPath.row {
+        case 0:
+            return "Issues"
+        case 1:
+            return "Branches"
+        case 2:
+            return "Commits"
+        case 3:
+            return "Pull Requests"
+        case 4:
+            return "Source"
+        default:
+            return ""
         }
     }
 }
