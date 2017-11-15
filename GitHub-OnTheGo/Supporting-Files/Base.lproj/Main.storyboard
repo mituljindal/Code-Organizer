@@ -38,10 +38,15 @@
                                     <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4xB-Nt-EGL"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gh_180" translatesAutoresizingMaskIntoConstraints="NO" id="dPu-1Q-xAS">
+                                <rect key="frame" x="97.5" y="86" width="180" height="180"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.14509803921568626" green="0.16078431372549018" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="dPu-1Q-xAS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9nq-ml-fDW"/>
                             <constraint firstItem="ZkO-sK-b1s" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="PUx-wh-QBc"/>
+                            <constraint firstItem="ZkO-sK-b1s" firstAttribute="top" secondItem="dPu-1Q-xAS" secondAttribute="bottom" constant="50" id="dSc-2T-mi8"/>
                             <constraint firstItem="ZkO-sK-b1s" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="nBe-m8-eop"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -510,6 +515,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gh_180" width="180" height="180"/>
         <image name="icons8-github-2" width="50" height="50"/>
         <image name="icons8-notification-2" width="25" height="25"/>
         <image name="icons8-repository" width="25" height="25"/>
