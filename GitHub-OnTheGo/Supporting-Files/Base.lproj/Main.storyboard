@@ -177,6 +177,36 @@
             </objects>
             <point key="canvasLocation" x="1772" y="738"/>
         </scene>
+        <!--Search-->
+        <scene sceneID="L5c-HK-vbA">
+            <objects>
+                <tableViewController storyboardIdentifier="SearchViewController" id="5AS-ph-P76" customClass="SearchViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IhX-8N-4li">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCells" id="vdz-h3-yBY">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vdz-h3-yBY" id="nSW-x2-ybj">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5AS-ph-P76" id="kCU-hc-Wxi"/>
+                            <outlet property="delegate" destination="5AS-ph-P76" id="QOi-r5-Mf4"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Search" image="icons8-search-button-2" id="kTE-xf-5UU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lVr-zq-xcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1775" y="1509"/>
+        </scene>
         <!--Repository View Controller-->
         <scene sceneID="W27-dr-2hk">
             <objects>
@@ -425,33 +455,18 @@
                     </tabBar>
                     <connections>
                         <segue destination="Vot-4n-bNX" kind="relationship" relationship="viewControllers" id="sdx-GP-Wif"/>
-                        <segue destination="j5J-eP-9Wt" kind="relationship" relationship="viewControllers" id="gHO-bR-1E0"/>
+                        <segue destination="5AS-ph-P76" kind="relationship" relationship="viewControllers" id="Bpc-Nz-veM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LjH-lK-Fjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="878" y="739"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="ftE-Kb-5ay">
-            <objects>
-                <viewController id="j5J-eP-9Wt" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cDj-1N-as5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="EZW-Fo-ybj"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="rW2-fL-RqD"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KWu-Xt-T5D" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="898" y="1480"/>
-        </scene>
     </scenes>
     <resources>
         <image name="icons8-github-2" width="50" height="50"/>
         <image name="icons8-repository" width="25" height="25"/>
         <image name="icons8-repository-2" width="25" height="25"/>
+        <image name="icons8-search-button-2" width="25" height="25"/>
     </resources>
 </document>

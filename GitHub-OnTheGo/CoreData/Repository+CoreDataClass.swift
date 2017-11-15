@@ -15,10 +15,14 @@ public class Repository: NSManagedObject {
     var list = [Int: [String]]()
     var content = Content()
     
-    convenience init(json: [String: Any], context: NSManagedObjectContext) {
+    convenience init(json: [String: Any], save: Bool, context: NSManagedObjectContext) {
         
         if let ent = NSEntityDescription.entity(forEntityName: "Repository", in: context) {
-            self.init(entity: ent, insertInto: context)
+            if save {
+                self.init(entity: ent, insertInto: context)
+            } else {
+                self.init(entity: ent, insertInto: nil)
+            }
             
             id = json["id"] as! Int64
             name = json["name"] as? String ?? ""

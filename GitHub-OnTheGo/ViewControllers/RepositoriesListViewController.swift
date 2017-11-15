@@ -24,7 +24,7 @@ class RepositoriesListViewController: UIViewController, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.topItem?.title = "Repositories"
+        self.navigationController?.navigationBar.topItem?.title = "GitHub-OnTheGo"
         
 //        Setting fetch requests
         let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "Repository")

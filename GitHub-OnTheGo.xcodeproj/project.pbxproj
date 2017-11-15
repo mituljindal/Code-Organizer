@@ -22,16 +22,17 @@
 		AC2A24891FB8A66A00DBF6F2 /* RepositoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A24881FB8A66A00DBF6F2 /* RepositoriesListViewController.swift */; };
 		AC2A248B1FB8BA9000DBF6F2 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A248A1FB8BA9000DBF6F2 /* UIViewControllerExtension.swift */; };
 		AC4F54681FB9AC4C00FEA193 /* Repository+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F54661FB9AC4C00FEA193 /* Repository+CoreDataClass.swift */; };
-		AC6FD11B1FB622BE000CB8AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC6FD11A1FB622BE000CB8AC /* GoogleService-Info.plist */; };
 		AC8B69131FB5F175002D8104 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8B69121FB5F175002D8104 /* Constants.swift */; };
 		AC8B69191FB61639002D8104 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8B69181FB61639002D8104 /* WebViewController.swift */; };
 		AC972EFF1FBB42BE0030DA42 /* ContentDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC972EFE1FBB42BE0030DA42 /* ContentDisplayViewController.swift */; };
+		ACACFD831FBC40310054E15E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACACFD821FBC40310054E15E /* SearchViewController.swift */; };
 		ACC61A5A1FB5AC39007D9102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC61A591FB5AC39007D9102 /* AppDelegate.swift */; };
 		ACC61A5C1FB5AC39007D9102 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC61A5B1FB5AC39007D9102 /* LoginViewController.swift */; };
 		ACC61A5F1FB5AC39007D9102 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC61A5D1FB5AC39007D9102 /* Main.storyboard */; };
 		ACC61A611FB5AC39007D9102 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC61A601FB5AC39007D9102 /* Assets.xcassets */; };
 		ACC61A641FB5AC39007D9102 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC61A621FB5AC39007D9102 /* LaunchScreen.storyboard */; };
 		ACEC94931FB87FFD00A4D127 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC94921FB87FFD00A4D127 /* UIColorExtension.swift */; };
+		ACF5DE581FBC9333009572F6 /* GitHubSearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF5DE571FBC9333009572F6 /* GitHubSearchClient.swift */; };
 		ACFEF2A11FBB633D00A348D8 /* GitHubOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFEF2A01FBB633D00A348D8 /* GitHubOAuth.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,10 +54,10 @@
 		AC2A24881FB8A66A00DBF6F2 /* RepositoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListViewController.swift; sourceTree = "<group>"; };
 		AC2A248A1FB8BA9000DBF6F2 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		AC4F54661FB9AC4C00FEA193 /* Repository+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Repository+CoreDataClass.swift"; path = "/Users/mituljindal/Desktop/GitHub-OnTheGo/GitHub-OnTheGo/CoreData/Repository+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		AC6FD11A1FB622BE000CB8AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC8B69121FB5F175002D8104 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC8B69181FB61639002D8104 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AC972EFE1FBB42BE0030DA42 /* ContentDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDisplayViewController.swift; sourceTree = "<group>"; };
+		ACACFD821FBC40310054E15E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		ACC61A561FB5AC39007D9102 /* GitHub-OnTheGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub-OnTheGo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC61A591FB5AC39007D9102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC61A5B1FB5AC39007D9102 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 		ACC61A631FB5AC39007D9102 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACC61A651FB5AC39007D9102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACEC94921FB87FFD00A4D127 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		ACF5DE571FBC9333009572F6 /* GitHubSearchClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchClient.swift; sourceTree = "<group>"; };
 		ACFEF2A01FBB633D00A348D8 /* GitHubOAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubOAuth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,7 +128,6 @@
 				ACC61A591FB5AC39007D9102 /* AppDelegate.swift */,
 				ACC61A651FB5AC39007D9102 /* Info.plist */,
 				ACC61A5D1FB5AC39007D9102 /* Main.storyboard */,
-				AC6FD11A1FB622BE000CB8AC /* GoogleService-Info.plist */,
 			);
 			path = "Supporting-Files";
 			sourceTree = "<group>";
@@ -138,6 +139,7 @@
 				AC0C26471FB6E72300DB7DA0 /* GitHubClient.swift */,
 				AC20C0B91FB8E7C50078B9FF /* GitHubRepository.swift */,
 				ACFEF2A01FBB633D00A348D8 /* GitHubOAuth.swift */,
+				ACF5DE571FBC9333009572F6 /* GitHubSearchClient.swift */,
 			);
 			path = "Client-Github";
 			sourceTree = "<group>";
@@ -152,6 +154,7 @@
 				AC283C5D1FBA323400DC018C /* RepositoryDataViewController.swift */,
 				AC019AF41FBB20D200533D9C /* ContentListViewController.swift */,
 				AC972EFE1FBB42BE0030DA42 /* ContentDisplayViewController.swift */,
+				ACACFD821FBC40310054E15E /* SearchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -259,7 +262,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACC61A641FB5AC39007D9102 /* LaunchScreen.storyboard in Resources */,
-				AC6FD11B1FB622BE000CB8AC /* GoogleService-Info.plist in Resources */,
 				ACC61A611FB5AC39007D9102 /* Assets.xcassets in Resources */,
 				ACC61A5F1FB5AC39007D9102 /* Main.storyboard in Resources */,
 			);
@@ -294,16 +296,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GitHub-OnTheGo/Pods-GitHub-OnTheGo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -347,6 +343,7 @@
 				AC2A24891FB8A66A00DBF6F2 /* RepositoriesListViewController.swift in Sources */,
 				AC283C5E1FBA323400DC018C /* RepositoryDataViewController.swift in Sources */,
 				AC283C561FB9C5DD00DC018C /* NavigationControllerExtension.swift in Sources */,
+				ACACFD831FBC40310054E15E /* SearchViewController.swift in Sources */,
 				AC4F54681FB9AC4C00FEA193 /* Repository+CoreDataClass.swift in Sources */,
 				AC2A248B1FB8BA9000DBF6F2 /* UIViewControllerExtension.swift in Sources */,
 				AC8B69131FB5F175002D8104 /* Constants.swift in Sources */,
@@ -356,6 +353,7 @@
 				AC972EFF1FBB42BE0030DA42 /* ContentDisplayViewController.swift in Sources */,
 				AC20C0C01FB8F99B0078B9FF /* Model.xcdatamodeld in Sources */,
 				ACEC94931FB87FFD00A4D127 /* UIColorExtension.swift in Sources */,
+				ACF5DE581FBC9333009572F6 /* GitHubSearchClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

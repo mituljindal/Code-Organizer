@@ -16,6 +16,8 @@ class ContentDisplayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = content.name
+        
 //        Get File content and display
         github.downloadText(content: content) {
             print("in completion")

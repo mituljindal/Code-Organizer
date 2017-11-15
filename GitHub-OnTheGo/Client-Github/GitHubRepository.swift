@@ -40,7 +40,7 @@ extension GitHubClient {
                     let results = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [[String: Any]]
                     
                     for result in results {
-                        let _ = Repository(json: result, context: self.context)
+                        let _ = Repository(json: result, save: true, context: self.context)
                     }
                     do {
                         try self.stack.saveContext()
