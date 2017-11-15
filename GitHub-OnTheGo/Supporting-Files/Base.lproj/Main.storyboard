@@ -177,6 +177,51 @@
             </objects>
             <point key="canvasLocation" x="1772" y="738"/>
         </scene>
+        <!--Notifications-->
+        <scene sceneID="khm-w5-a1U">
+            <objects>
+                <tableViewController storyboardIdentifier="NotificationViewController" id="eJk-cf-byK" customClass="NotificationViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1KT-ou-6Ja">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationCell" textLabel="eQk-2y-h1K" detailTextLabel="Ptx-gv-jYr" style="IBUITableViewCellStyleSubtitle" id="Ebb-eb-6z2">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ebb-eb-6z2" id="sgW-fk-s5T">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eQk-2y-h1K">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ptx-gv-jYr">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eJk-cf-byK" id="9tV-xX-ZBX"/>
+                            <outlet property="delegate" destination="eJk-cf-byK" id="nmp-IM-pk3"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Notifications" image="icons8-notification-2" id="WrC-ZH-YJs"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7XG-fr-SAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="1513"/>
+        </scene>
         <!--Search-->
         <scene sceneID="L5c-HK-vbA">
             <objects>
@@ -456,6 +501,7 @@
                     <connections>
                         <segue destination="Vot-4n-bNX" kind="relationship" relationship="viewControllers" id="sdx-GP-Wif"/>
                         <segue destination="5AS-ph-P76" kind="relationship" relationship="viewControllers" id="Bpc-Nz-veM"/>
+                        <segue destination="eJk-cf-byK" kind="relationship" relationship="viewControllers" id="yiQ-4n-cfi"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LjH-lK-Fjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -465,6 +511,7 @@
     </scenes>
     <resources>
         <image name="icons8-github-2" width="50" height="50"/>
+        <image name="icons8-notification-2" width="25" height="25"/>
         <image name="icons8-repository" width="25" height="25"/>
         <image name="icons8-repository-2" width="25" height="25"/>
         <image name="icons8-search-button-2" width="25" height="25"/>

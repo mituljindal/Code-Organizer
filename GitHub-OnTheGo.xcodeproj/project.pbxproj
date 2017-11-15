@@ -33,6 +33,8 @@
 		ACC61A641FB5AC39007D9102 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC61A621FB5AC39007D9102 /* LaunchScreen.storyboard */; };
 		ACEC94931FB87FFD00A4D127 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC94921FB87FFD00A4D127 /* UIColorExtension.swift */; };
 		ACF5DE581FBC9333009572F6 /* GitHubSearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF5DE571FBC9333009572F6 /* GitHubSearchClient.swift */; };
+		ACF5DE5A1FBCD7CF009572F6 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF5DE591FBCD7CF009572F6 /* NotificationViewController.swift */; };
+		ACF5DE5C1FBCD898009572F6 /* GitHubNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF5DE5B1FBCD898009572F6 /* GitHubNotifications.swift */; };
 		ACFEF2A11FBB633D00A348D8 /* GitHubOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFEF2A01FBB633D00A348D8 /* GitHubOAuth.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		ACC61A651FB5AC39007D9102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACEC94921FB87FFD00A4D127 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		ACF5DE571FBC9333009572F6 /* GitHubSearchClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchClient.swift; sourceTree = "<group>"; };
+		ACF5DE591FBCD7CF009572F6 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		ACF5DE5B1FBCD898009572F6 /* GitHubNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubNotifications.swift; sourceTree = "<group>"; };
 		ACFEF2A01FBB633D00A348D8 /* GitHubOAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubOAuth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +144,7 @@
 				AC20C0B91FB8E7C50078B9FF /* GitHubRepository.swift */,
 				ACFEF2A01FBB633D00A348D8 /* GitHubOAuth.swift */,
 				ACF5DE571FBC9333009572F6 /* GitHubSearchClient.swift */,
+				ACF5DE5B1FBCD898009572F6 /* GitHubNotifications.swift */,
 			);
 			path = "Client-Github";
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 				AC019AF41FBB20D200533D9C /* ContentListViewController.swift */,
 				AC972EFE1FBB42BE0030DA42 /* ContentDisplayViewController.swift */,
 				ACACFD821FBC40310054E15E /* SearchViewController.swift */,
+				ACF5DE591FBCD7CF009572F6 /* NotificationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -333,6 +339,7 @@
 			files = (
 				AC0C26481FB6E72300DB7DA0 /* GitHubClient.swift in Sources */,
 				AC1B5A0E1FBA440800387808 /* Repository+CoreDataProperties.swift in Sources */,
+				ACF5DE5A1FBCD7CF009572F6 /* NotificationViewController.swift in Sources */,
 				AC019AF51FBB20D200533D9C /* ContentListViewController.swift in Sources */,
 				ACC61A5C1FB5AC39007D9102 /* LoginViewController.swift in Sources */,
 				ACC61A5A1FB5AC39007D9102 /* AppDelegate.swift in Sources */,
@@ -351,6 +358,7 @@
 				AC8B69191FB61639002D8104 /* WebViewController.swift in Sources */,
 				AC283C581FBA094400DC018C /* CustomUITextView.swift in Sources */,
 				AC972EFF1FBB42BE0030DA42 /* ContentDisplayViewController.swift in Sources */,
+				ACF5DE5C1FBCD898009572F6 /* GitHubNotifications.swift in Sources */,
 				AC20C0C01FB8F99B0078B9FF /* Model.xcdatamodeld in Sources */,
 				ACEC94931FB87FFD00A4D127 /* UIColorExtension.swift in Sources */,
 				ACF5DE581FBC9333009572F6 /* GitHubSearchClient.swift in Sources */,

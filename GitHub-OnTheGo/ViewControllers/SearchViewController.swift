@@ -13,9 +13,13 @@ class SearchViewController: UITableViewController {
     
     var searchBar: UISearchBar!
     let searchClient = GitHubSearchClient.shared
+    var languageBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        languageBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 100, height: 20))
+        tableView.tableHeaderView?.addSubview(languageBar)
+        tableView.tableHeaderView?.isHidden = false
         
         setupSearchBar()
     }
@@ -50,18 +54,19 @@ extension SearchViewController: UISearchBarDelegate {
         searchBar.showsCancelButton = true
         searchBar.delegate = self
         searchBar.placeholder = "Search Repositories"
+        searchBar.keyboardType = .asciiCapable
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let leftNavBarButton = UIBarButtonItem(customView: searchBar)
-        self.navigationController?.navigationBar.topItem?.leftBarButtonItem = leftNavBarButton
+        let barButton = UIBarButtonItem(customView: searchBar)
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = barButton
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        self.navigationController?.navigationBar.topItem?.leftBarButtonItem = nil
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = nil
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -69,18 +74,17 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText == "" {
+        searchBar.text = searchText.replacingOccurrences(of: " ", with: "")
+        
+        if searchText == "" || searchText == " " {
             searchClient.clearRepos() {
                 self.tableView.reloadData()
             }
+        } else {
+            searchClient.searchRepositories(query: searchBar.text!) {
+                self.tableView.reloadData()
+            }
         }
-        searchClient.searchRepositories(query: searchText) {
-            self.tableView.reloadData()
-        }
-    }
-    
-    @IBAction func userDidTap(_ sender: Any) {
-        searchBar.resignFirstResponder()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
