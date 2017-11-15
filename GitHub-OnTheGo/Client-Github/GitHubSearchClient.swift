@@ -47,7 +47,10 @@ class GitHubSearchClient: GitHubClient {
                         let repo = Repository(json: item, save: true, context: self.context)
                         self.repos.append(repo)
                     }
-                    completion()
+                    
+                    DispatchQueue.main.async {
+                        completion()
+                    }
                     
                 } catch {
                     return

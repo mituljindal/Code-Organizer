@@ -65,7 +65,9 @@ class GitHubNotificationClient: GitHubClient {
                     let notification = Notification(title: title, name: name)
                     self.notifications.append(notification)
                 }
-                completion()
+                DispatchQueue.main.async {
+                    completion()
+                }
         }
     }
 }
