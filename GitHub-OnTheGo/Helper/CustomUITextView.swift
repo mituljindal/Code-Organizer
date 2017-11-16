@@ -10,15 +10,15 @@ import UIKit
 
 class CustomUITextView: UITextView {
     
-    override init(frame: CGRect, textContainer: NSTextContainer?) {
-        super.init(frame: frame, textContainer: textContainer)
-
-        self.layer.borderColor = UIColor.gray.cgColor
-        self.layer.borderWidth = 0.225
-        self.textAlignment = .center
-
-        centerTextVertically()
-    }
+//    override init(frame: CGRect, textContainer: NSTextContainer?) {
+//        super.init(frame: frame, textContainer: textContainer)
+//
+//        self.layer.borderColor = UIColor.gray.cgColor
+//        self.layer.borderWidth = 0.225
+//        self.textAlignment = .center
+//
+//        centerTextVertically()
+//    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

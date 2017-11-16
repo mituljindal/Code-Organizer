@@ -37,6 +37,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, UIBarPositionin
     deinit { webView.removeObserver(self, forKeyPath: "estimatedProgress") }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        
         if (keyPath == "estimatedProgress") {
 //            Associating progress bar with webview progress
             progressView.isHidden = webView.estimatedProgress == 1

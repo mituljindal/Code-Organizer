@@ -19,9 +19,14 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var ownerTextView: CustomUITextView!
+    
     var repo: Repository!
     
+    var launch = true
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
         
 //        Setting data values
         starsTextView.text = "\(repo.stargazers)\nStars"
@@ -31,19 +36,32 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
         publicTextView.text = repo.isPrivate ? "Private": "Public"
         languageTextView.text = repo.language
         
+        ownerTextView.text = "Owner: \(repo.ownerName!)"
+        
         tableView.bounces = false
         
-        super.viewDidLoad()
+        
         self.navigationItem.title = repo.name
 //        For detail views data initialization
         repo.custInit()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
 //        Vertically center align the text views
         publicTextView.centerTextVertically()
         languageTextView.centerTextVertically()
+        ownerTextView.centerTextVertically()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        Vertically center align the text views
+        publicTextView.centerTextVertically()
+        languageTextView.centerTextVertically()
+        ownerTextView.centerTextVertically()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

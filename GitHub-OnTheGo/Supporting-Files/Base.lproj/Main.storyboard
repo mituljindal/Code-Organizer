@@ -81,7 +81,7 @@
                                 <color key="barTintColor" red="0.14509803921568626" green="0.16078431372549018" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="Lpd-Oz-hY4">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Bgh-lT-W7T">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Bgh-lT-W7T">
                                             <connections>
                                                 <action selector="cancelPressed:" destination="kmo-BB-UcE" id="8HX-AN-CgO"/>
                                             </connections>
@@ -91,7 +91,6 @@
                             </navigationBar>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="jFJ-CB-I3h" firstAttribute="top" secondItem="20e-wD-j5V" secondAttribute="bottom" id="0UQ-QJ-rLd"/>
                             <constraint firstItem="20e-wD-j5V" firstAttribute="top" secondItem="gYp-WX-W8Z" secondAttribute="bottom" id="4VK-qr-pJs"/>
                             <constraint firstItem="gYp-WX-W8Z" firstAttribute="top" secondItem="aja-oO-6Sc" secondAttribute="top" id="9qw-eQ-gHb"/>
                             <constraint firstAttribute="trailing" secondItem="jFJ-CB-I3h" secondAttribute="trailing" id="GKw-yk-Goh"/>
@@ -100,6 +99,7 @@
                             <constraint firstAttribute="bottom" secondItem="jFJ-CB-I3h" secondAttribute="bottom" id="PRs-4Q-Skh"/>
                             <constraint firstItem="jFJ-CB-I3h" firstAttribute="leading" secondItem="aja-oO-6Sc" secondAttribute="leading" id="cHs-gI-0HQ"/>
                             <constraint firstItem="gYp-WX-W8Z" firstAttribute="leading" secondItem="aja-oO-6Sc" secondAttribute="leading" id="o0x-cb-qLP"/>
+                            <constraint firstItem="jFJ-CB-I3h" firstAttribute="top" secondItem="gYp-WX-W8Z" secondAttribute="bottom" constant="2" id="pZj-Nj-tfS"/>
                             <constraint firstAttribute="trailing" secondItem="20e-wD-j5V" secondAttribute="trailing" id="s1f-DR-1Mh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aja-oO-6Sc"/>
@@ -265,51 +265,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgA-DW-Ygb" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="125" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="4nz-py-xjO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URx-ib-YVA" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
-                                <rect key="frame" x="125" y="20" width="125" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="SRq-Tl-kvN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMx-00-zPy" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
-                                <rect key="frame" x="250" y="20" width="125" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="54g-6L-Zwh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGN-Ze-1zW" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="90" width="187.5" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="hpD-Cj-Wgd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5e-8T-Sz8" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
-                                <rect key="frame" x="187.5" y="90" width="187.5" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Vjs-sg-VFm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0RN-Hh-PZv">
                                 <rect key="frame" x="0.0" y="160" width="375" height="250"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -331,37 +286,95 @@
                                     <outlet property="delegate" destination="VmH-mS-Ec7" id="H7C-vO-Lsu"/>
                                 </connections>
                             </tableView>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbE-Y4-4II" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="430" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Azq-Vz-TOO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6A0-7I-LPA" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="125" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ph3-0d-Vvy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfe-gh-dOl" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                                <rect key="frame" x="125" y="20" width="125" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="THf-e6-lB5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twr-G6-65o" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                                <rect key="frame" x="250" y="20" width="125" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Yqv-QU-oxS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sb-6a-QJA" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="90" width="187.5" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uOg-Oz-lfx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbf-HU-pFj" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                                <rect key="frame" x="187.5" y="90" width="187.5" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BXI-BD-eEo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="9Sb-6a-QJA" firstAttribute="leading" secondItem="Gzt-9M-tJl" secondAttribute="leading" id="1Xt-J4-uwr"/>
                             <constraint firstItem="0RN-Hh-PZv" firstAttribute="leading" secondItem="Gzt-9M-tJl" secondAttribute="leading" id="2ZY-5S-Qq2"/>
-                            <constraint firstItem="H5e-8T-Sz8" firstAttribute="trailing" secondItem="Gzt-9M-tJl" secondAttribute="trailing" id="4d7-Qc-X1l"/>
-                            <constraint firstItem="URx-ib-YVA" firstAttribute="top" secondItem="Gzt-9M-tJl" secondAttribute="top" id="5dr-aG-z0H"/>
-                            <constraint firstItem="QGN-Ze-1zW" firstAttribute="width" secondItem="KTO-2s-ra5" secondAttribute="width" multiplier="1/2" id="9G7-xQ-yAT"/>
-                            <constraint firstItem="H5e-8T-Sz8" firstAttribute="top" secondItem="URx-ib-YVA" secondAttribute="bottom" constant="20" id="AdJ-E6-seb"/>
-                            <constraint firstItem="RgA-DW-Ygb" firstAttribute="leading" secondItem="Gzt-9M-tJl" secondAttribute="leading" id="FM5-am-auF"/>
-                            <constraint firstItem="URx-ib-YVA" firstAttribute="width" secondItem="KTO-2s-ra5" secondAttribute="width" multiplier="1/3" id="HHf-oc-xyt"/>
-                            <constraint firstItem="RgA-DW-Ygb" firstAttribute="top" secondItem="Gzt-9M-tJl" secondAttribute="top" id="JK0-dq-ldz"/>
-                            <constraint firstItem="QGN-Ze-1zW" firstAttribute="top" secondItem="URx-ib-YVA" secondAttribute="bottom" constant="20" id="LEG-qA-h0U"/>
-                            <constraint firstItem="QGN-Ze-1zW" firstAttribute="leading" secondItem="Gzt-9M-tJl" secondAttribute="leading" id="MRc-H3-LCd"/>
-                            <constraint firstItem="RgA-DW-Ygb" firstAttribute="width" secondItem="KTO-2s-ra5" secondAttribute="width" multiplier="1/3" id="Nfo-PQ-3jl"/>
-                            <constraint firstItem="URx-ib-YVA" firstAttribute="leading" secondItem="RgA-DW-Ygb" secondAttribute="trailing" id="PcD-Xz-vcz"/>
-                            <constraint firstItem="BMx-00-zPy" firstAttribute="top" secondItem="Gzt-9M-tJl" secondAttribute="top" id="Pzi-mj-6v4"/>
-                            <constraint firstItem="0RN-Hh-PZv" firstAttribute="top" secondItem="QGN-Ze-1zW" secondAttribute="bottom" constant="20" id="RLZ-Ci-dfc"/>
-                            <constraint firstItem="BMx-00-zPy" firstAttribute="leading" secondItem="URx-ib-YVA" secondAttribute="trailing" id="Uoq-ih-rVJ"/>
-                            <constraint firstItem="BMx-00-zPy" firstAttribute="trailing" secondItem="Gzt-9M-tJl" secondAttribute="trailing" id="bc8-FH-YMD"/>
+                            <constraint firstItem="6A0-7I-LPA" firstAttribute="width" secondItem="KTO-2s-ra5" secondAttribute="width" multiplier="1/3" id="5ZA-go-N2G"/>
+                            <constraint firstItem="GbE-Y4-4II" firstAttribute="leading" secondItem="Gzt-9M-tJl" secondAttribute="leading" id="AJu-p0-LSv"/>
+                            <constraint firstAttribute="trailing" secondItem="wbf-HU-pFj" secondAttribute="trailing" id="BG4-53-5DI"/>
+                            <constraint firstItem="Gzt-9M-tJl" firstAttribute="trailing" secondItem="twr-G6-65o" secondAttribute="trailing" id="C2r-FI-d4D"/>
+                            <constraint firstItem="GbE-Y4-4II" firstAttribute="top" secondItem="0RN-Hh-PZv" secondAttribute="bottom" constant="20" id="IMA-pk-kEc"/>
+                            <constraint firstItem="Gzt-9M-tJl" firstAttribute="trailing" secondItem="GbE-Y4-4II" secondAttribute="trailing" id="JwM-6B-R4g"/>
+                            <constraint firstItem="Lfe-gh-dOl" firstAttribute="top" secondItem="Gzt-9M-tJl" secondAttribute="top" id="Mu8-TW-uy7"/>
+                            <constraint firstItem="twr-G6-65o" firstAttribute="top" secondItem="Gzt-9M-tJl" secondAttribute="top" id="OJ9-R2-eM3"/>
+                            <constraint firstItem="9Sb-6a-QJA" firstAttribute="top" secondItem="6A0-7I-LPA" secondAttribute="bottom" constant="20" id="SgE-Em-LhB"/>
+                            <constraint firstItem="6A0-7I-LPA" firstAttribute="top" secondItem="Gzt-9M-tJl" secondAttribute="top" id="Wp5-3H-K34"/>
+                            <constraint firstItem="wbf-HU-pFj" firstAttribute="leading" secondItem="9Sb-6a-QJA" secondAttribute="trailing" id="ZuR-au-H1F"/>
+                            <constraint firstItem="wbf-HU-pFj" firstAttribute="top" secondItem="Lfe-gh-dOl" secondAttribute="bottom" constant="20" id="dZi-c0-rtm"/>
+                            <constraint firstItem="6A0-7I-LPA" firstAttribute="leading" secondItem="Gzt-9M-tJl" secondAttribute="leading" id="eAb-Bi-b6z"/>
+                            <constraint firstItem="Lfe-gh-dOl" firstAttribute="leading" secondItem="6A0-7I-LPA" secondAttribute="trailing" id="gNm-ua-ypr"/>
+                            <constraint firstItem="9Sb-6a-QJA" firstAttribute="width" secondItem="KTO-2s-ra5" secondAttribute="width" multiplier="1/2" id="gm4-Fb-NRh"/>
                             <constraint firstItem="0RN-Hh-PZv" firstAttribute="trailing" secondItem="Gzt-9M-tJl" secondAttribute="trailing" id="ilW-ab-A0P"/>
-                            <constraint firstItem="H5e-8T-Sz8" firstAttribute="leading" secondItem="QGN-Ze-1zW" secondAttribute="trailing" id="xah-rf-wzZ"/>
+                            <constraint firstItem="0RN-Hh-PZv" firstAttribute="top" secondItem="9Sb-6a-QJA" secondAttribute="bottom" constant="20" id="nWa-OU-60L"/>
+                            <constraint firstItem="Lfe-gh-dOl" firstAttribute="width" secondItem="KTO-2s-ra5" secondAttribute="width" multiplier="1/3" id="o7B-mP-YMr"/>
+                            <constraint firstItem="twr-G6-65o" firstAttribute="leading" secondItem="Lfe-gh-dOl" secondAttribute="trailing" id="yhU-P2-OXo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gzt-9M-tJl"/>
                     </view>
                     <connections>
-                        <outlet property="forksTextView" destination="URx-ib-YVA" id="STw-0N-fkT"/>
-                        <outlet property="languageTextView" destination="H5e-8T-Sz8" id="Qod-pi-NTb"/>
-                        <outlet property="publicTextView" destination="QGN-Ze-1zW" id="UAc-dP-l8e"/>
-                        <outlet property="starsTextView" destination="RgA-DW-Ygb" id="hA0-Ov-hGP"/>
+                        <outlet property="forksTextView" destination="Lfe-gh-dOl" id="THx-cj-F0l"/>
+                        <outlet property="languageTextView" destination="wbf-HU-pFj" id="xdi-WI-Hn0"/>
+                        <outlet property="ownerTextView" destination="GbE-Y4-4II" id="OKN-WX-UzJ"/>
+                        <outlet property="publicTextView" destination="9Sb-6a-QJA" id="amc-30-Qdn"/>
+                        <outlet property="starsTextView" destination="6A0-7I-LPA" id="Nzo-K4-jxl"/>
                         <outlet property="tableView" destination="0RN-Hh-PZv" id="Dpa-tt-aiS"/>
-                        <outlet property="watchersTextView" destination="BMx-00-zPy" id="H2r-v6-BJ2"/>
+                        <outlet property="watchersTextView" destination="twr-G6-65o" id="yud-eK-yTH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KNb-SS-cCz" userLabel="First Responder" sceneMemberID="firstResponder"/>

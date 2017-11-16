@@ -24,16 +24,20 @@ public class Repository: NSManagedObject {
                 self.init(entity: ent, insertInto: nil)
             }
             
-            id = json["id"] as! Int64
             name = json["name"] as? String ?? ""
             urlString = json["url"] as? String ?? ""
             isPrivate = json["private"] as? Bool ?? false
             descriptionString = json["description"] as? String
-            isFork = json["fork"] as? Bool ?? false
             stargazers = json["stargazers_count"] as? Int32 ?? 0
             watchers = json["watchers_count"] as? Int32 ?? 1
             forks = json["forks_count"] as? Int32 ?? 0
             language = json["language"] as? String ?? ""
+            if let owner = json["owner"] as? [String: Any] {
+                ownerName = owner["login"] as? String ?? ""
+            } else {
+                ownerName = ""
+            }
+            
             
         } else {
             fatalError("Unable to find Entity name!")
