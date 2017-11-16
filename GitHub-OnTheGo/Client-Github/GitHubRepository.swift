@@ -26,7 +26,7 @@ extension GitHubClient {
                 }
                 
                 let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Repository")
-                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
                 
                 let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
                 
@@ -47,7 +47,9 @@ extension GitHubClient {
                     } catch {
                         print("save unsuccessful")
                     }
-                    completion()
+                    DispatchQueue.main.async {
+                        completion()
+                    }
                     
                 } catch {
                     return
