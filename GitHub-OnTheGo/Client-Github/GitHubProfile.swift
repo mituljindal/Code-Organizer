@@ -56,4 +56,35 @@ extension GitHubClient {
                 }
         }
     }
+    
+    func logout(completion: @escaping () -> ()) {
+        
+        self.OAuthToken = nil
+        GitHubNotificationClient.shared = GitHubNotificationClient()
+        GitHubSearchClient.shared = GitHubSearchClient()
+        
+        UserDefaults.standard.set(nil, forKey: "JWT")
+        
+        var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Repository")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        
+        var batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try self.context.execute(batchDeleteRequest)
+        } catch {
+            print("couldn't find Repository")
+        }
+        
+        fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try self.context.execute(batchDeleteRequest)
+        } catch {
+            print("couldn't find User")
+        }
+        
+        completion()
+    }
 }

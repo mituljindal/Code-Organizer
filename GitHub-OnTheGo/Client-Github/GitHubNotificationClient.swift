@@ -16,7 +16,7 @@ class GitHubNotificationClient: GitHubClient {
         var name: String?
     }
     
-    static let shared = GitHubNotificationClient()
+    static var shared = GitHubNotificationClient()
     
     var github = GitHubClient.sharedInstance
     

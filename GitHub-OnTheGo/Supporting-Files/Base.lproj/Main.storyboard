@@ -81,7 +81,7 @@
                                 <color key="barTintColor" red="0.14509803921568626" green="0.16078431372549018" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="Lpd-Oz-hY4">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Bgh-lT-W7T">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Bgh-lT-W7T">
                                             <connections>
                                                 <action selector="cancelPressed:" destination="kmo-BB-UcE" id="8HX-AN-CgO"/>
                                             </connections>
@@ -201,10 +201,36 @@
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8B-Kg-X58">
+                                <rect key="frame" x="20" y="499" width="335" height="35"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="R7v-mK-yOV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Logout"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="depth">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logoutButtonPressed:" destination="XCu-y2-7nh" eventType="touchUpInside" id="Qpc-OO-JY0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1450980392" green="0.16078431369999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="T8B-Kg-X58" firstAttribute="leading" secondItem="bLS-x3-dTD" secondAttribute="leading" constant="20" id="52o-Kw-k09"/>
                             <constraint firstItem="4VN-wE-zUP" firstAttribute="top" secondItem="Oxs-6M-60X" secondAttribute="bottom" constant="15" id="5Hn-xC-Q1x"/>
+                            <constraint firstItem="bLS-x3-dTD" firstAttribute="trailing" secondItem="T8B-Kg-X58" secondAttribute="trailing" constant="20" id="5Rp-ZX-xzA"/>
                             <constraint firstItem="bLS-x3-dTD" firstAttribute="trailing" secondItem="p3W-kS-oY6" secondAttribute="trailing" id="7En-zJ-x76"/>
                             <constraint firstItem="bLS-x3-dTD" firstAttribute="trailing" secondItem="4VN-wE-zUP" secondAttribute="trailing" id="9X6-WG-M84"/>
                             <constraint firstItem="Yrm-1Y-YnW" firstAttribute="leading" secondItem="bLS-x3-dTD" secondAttribute="leading" id="EfH-W1-2vc"/>
@@ -219,6 +245,7 @@
                             <constraint firstItem="Oxs-6M-60X" firstAttribute="leading" secondItem="bLS-x3-dTD" secondAttribute="leading" id="d1P-fZ-YBO"/>
                             <constraint firstItem="bLS-x3-dTD" firstAttribute="trailing" secondItem="6aT-Pp-tiB" secondAttribute="trailing" id="qcd-ng-6iN"/>
                             <constraint firstItem="Yrm-1Y-YnW" firstAttribute="top" secondItem="6aT-Pp-tiB" secondAttribute="bottom" id="s1T-vH-yYl"/>
+                            <constraint firstItem="bLS-x3-dTD" firstAttribute="bottom" secondItem="T8B-Kg-X58" secondAttribute="bottom" constant="20" id="tFF-O7-Zrt"/>
                             <constraint firstItem="6aT-Pp-tiB" firstAttribute="top" secondItem="Umc-rN-C8K" secondAttribute="bottom" constant="20" id="xxt-Pu-A5H"/>
                             <constraint firstItem="4VN-wE-zUP" firstAttribute="leading" secondItem="bLS-x3-dTD" secondAttribute="leading" constant="5" id="zmC-d4-tK7"/>
                         </constraints>

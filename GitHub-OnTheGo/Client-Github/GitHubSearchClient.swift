@@ -12,7 +12,7 @@ import Alamofire
 class GitHubSearchClient: GitHubClient {
     
     var repos = [Repository]()
-    static let shared = GitHubSearchClient()
+    static var shared = GitHubSearchClient()
     let github = GitHubClient.sharedInstance
     
     func searchRepositories(query: String, completion: @escaping () -> ()) {

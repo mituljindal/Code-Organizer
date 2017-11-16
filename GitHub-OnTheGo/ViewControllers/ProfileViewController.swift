@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import  CoreData
+import CoreData
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
@@ -44,6 +44,24 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: appDelegate.stack.context, sectionNameKeyPath: nil, cacheName: nil)
         
         self.navigationController?.navigationBar.topItem?.title = "GitHub-OnTheGo"
+    }
+    
+    @IBAction func logoutButtonPressed(_ sender: Any) {
+        
+        let alert = UIAlertController(title: nil, message: "Are you sure?", preferredStyle: .alert)
+        let no = UIAlertAction(title: "No", style: .default, handler: nil)
+        let yes = UIAlertAction(title: "Yes", style: .default) { action in
+            
+            self.github.logout {
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                
+                self.present(controller, animated: false, completion: nil)
+            }
+        }
+        
+        alert.addAction(no)
+        alert.addAction(yes)
+        self.present(alert, animated: true, completion: nil)
     }
     
     func setViews() {

@@ -72,7 +72,7 @@ extension GitHubClient {
                             let value = resultsSplit[1]
                             switch key {
                             case "access_token":
-                                //                                    Save the token
+//                                Save the token
                                 self.OAuthToken = String(value)
                                 UserDefaults.standard.set(self.OAuthToken!, forKey: "JWT")
                                 self.header = ["Authorization": "token \(self.OAuthToken!)"]
