@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RepositoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -88,8 +89,18 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
         } else {
             repo.bookmarked = true
             saveButton.image =  UIImage(named: "icons8-repository-2")
-            if repo.managedObjectContext == nil {
-                github.stack.context.insert(repo)
+            if !repo.starred && !repo.owned {
+                let newRepo = NSEntityDescription.insertNewObject(forEntityName: "Repository", into: github.stack.context) as! Repository
+                newRepo.name = repo.name
+                newRepo.bookmarked = true
+                newRepo.forks = repo.forks
+                newRepo.stargazers = repo.stargazers
+                newRepo.isPrivate = repo.isPrivate
+                newRepo.watchers = repo.watchers
+                newRepo.descriptionString = repo.descriptionString
+                newRepo.language = repo.language
+                newRepo.urlString = repo.urlString
+                newRepo.ownerName = repo.ownerName
             }
         }
         do {
