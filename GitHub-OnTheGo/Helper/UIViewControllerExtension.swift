@@ -18,12 +18,6 @@ extension UIViewController {
         }
     }
     
-    var appDelegate: AppDelegate {
-        get {
-            return UIApplication.shared.delegate as! AppDelegate
-        }
-    }
-    
 //    For presenting alerts
     func presentAlert(title: String, error: String) {
         let ac = UIAlertController(title: title, message: error, preferredStyle: .alert)

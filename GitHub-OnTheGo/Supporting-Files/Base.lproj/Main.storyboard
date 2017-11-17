@@ -135,7 +135,7 @@
                                     <constraint firstAttribute="width" constant="125" id="djn-Ch-m6C"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6aT-Pp-tiB" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aT-Pp-tiB" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="165" width="375" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -144,7 +144,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Yrm-1Y-YnW" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrm-1Y-YnW" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="195" width="375" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -153,7 +153,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Oxs-6M-60X" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxs-6M-60X" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="225" width="375" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -162,7 +162,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p3W-kS-oY6">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p3W-kS-oY6">
                                 <rect key="frame" x="0.0" y="295" width="375" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -512,7 +512,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KNb-SS-cCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3318" y="744"/>
+            <point key="canvasLocation" x="2646" y="742"/>
         </scene>
         <!--Repository Data View Controller-->
         <scene sceneID="WWI-aw-6r6">
@@ -540,7 +540,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95f-oo-Zsg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4026" y="745"/>
+            <point key="canvasLocation" x="3353" y="743"/>
         </scene>
         <!--Content Display View Controller-->
         <scene sceneID="8ZZ-1h-ghq">
@@ -572,7 +572,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Lj-cs-bsQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5450" y="746"/>
+            <point key="canvasLocation" x="4777" y="743"/>
         </scene>
         <!--Content List View Controller-->
         <scene sceneID="N3R-J0-YDv">
@@ -600,7 +600,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSF-f5-OXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4746" y="748"/>
+            <point key="canvasLocation" x="4073" y="746"/>
         </scene>
         <!--Item-->
         <scene sceneID="MBx-ss-3ZR">
@@ -650,10 +650,10 @@
                         <color key="selectedImageTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="XCu-y2-7nh" kind="relationship" relationship="viewControllers" id="dRV-3h-sWk"/>
+                        <segue destination="Vot-4n-bNX" kind="relationship" relationship="viewControllers" id="Wef-35-zTt"/>
                         <segue destination="5AS-ph-P76" kind="relationship" relationship="viewControllers" id="Bpc-Nz-veM"/>
                         <segue destination="eJk-cf-byK" kind="relationship" relationship="viewControllers" id="yiQ-4n-cfi"/>
-                        <segue destination="Vot-4n-bNX" kind="relationship" relationship="viewControllers" id="Wef-35-zTt"/>
+                        <segue destination="XCu-y2-7nh" kind="relationship" relationship="viewControllers" id="dRV-3h-sWk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LjH-lK-Fjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
