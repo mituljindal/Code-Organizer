@@ -44,7 +44,7 @@ class GitHubSearchClient: GitHubClient {
                     self.repos = [Repository]()
                     
                     for item in items {
-                        let repo = Repository(json: item, save: true, context: self.context)
+                        let repo = Repository(json: item, save: true, type: nil, context: self.context)
                         self.repos.append(repo)
                     }
                     

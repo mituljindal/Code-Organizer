@@ -65,11 +65,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func setViews() {
-        print("setting views")
         let indexPath = IndexPath(row: 0, section: 0)
         
         if fetchedResultsController?.fetchedObjects?.count == 0 {
-            print("returning")
             return
         }
         
@@ -108,15 +106,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "RepositoriesListViewController") as! RepositoriesListViewController
         if indexPath.row == 0 {
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "RepositoriesListViewController") as! RepositoriesListViewController
-            
-            self.navigationController?.pushViewController(controller, animated: true)
+            controller.type = .owned
+        } else {
+            controller.type = .starred
         }
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func executeSearch() {
-        print("executing search")
         if let fc = fetchedResultsController {
             do {
                 try fc.performFetch()

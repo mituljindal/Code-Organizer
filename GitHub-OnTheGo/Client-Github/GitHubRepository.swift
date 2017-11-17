@@ -12,12 +12,25 @@ import CoreData
 
 extension GitHubClient {
     
-    func getRepositories(completion: @escaping () -> ()) {
-        Alamofire.request(API.url + API.userReps, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+    func getRepositories(type: RepoType, completion: @escaping () -> ()) {
+        
+        var url = API.url
+        
+        switch type {
+        case .starred:
+            url += API.starredReps
+        case .owned:
+            url += API.userReps
+        default:
+            return
+        }
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseJSON() { response in
                 if let error = response.error {
                     print("error: \(error)")
+                    return
                 }
                 
                 guard let data = response.data else {
@@ -27,6 +40,7 @@ extension GitHubClient {
                 
                 let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Repository")
                 fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+                fetchRequest.predicate = NSPredicate(format: "\(type) == %@", argumentArray: [true])
                 
                 let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
                 
@@ -40,7 +54,7 @@ extension GitHubClient {
                     let results = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [[String: Any]]
                     
                     for result in results {
-                        let _ = Repository(json: result, save: true, context: self.context)
+                        let _ = Repository(json: result, save: true, type: type, context: self.context)
                     }
                     do {
                         try self.stack.saveContext()

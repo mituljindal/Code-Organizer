@@ -15,13 +15,24 @@ public class Repository: NSManagedObject {
     var list = [Int: [String]]()
     var content = Content()
     
-    convenience init(json: [String: Any], save: Bool, context: NSManagedObjectContext) {
+    convenience init(json: [String: Any], save: Bool, type: RepoType?, context: NSManagedObjectContext) {
         
         if let ent = NSEntityDescription.entity(forEntityName: "Repository", in: context) {
             if save {
                 self.init(entity: ent, insertInto: context)
             } else {
                 self.init(entity: ent, insertInto: nil)
+            }
+            
+            if let type = type {
+                switch(type) {
+                case .owned:
+                    owned = true
+                case .starred:
+                    starred = true
+                default:
+                    print("wrong type")
+                }
             }
             
             name = json["name"] as? String ?? ""

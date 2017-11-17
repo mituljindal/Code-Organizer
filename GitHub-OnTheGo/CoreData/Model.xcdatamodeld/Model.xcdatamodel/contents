@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="17B48" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Repository" representedClassName="Repository" syncable="YES">
+        <attribute name="bookmarked" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="descriptionString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="forks" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isPrivate" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="language" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="owned" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="ownerName" attributeType="String" syncable="YES"/>
         <attribute name="stargazers" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="starred" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="urlString" attributeType="String" syncable="YES"/>
         <attribute name="watchers" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
@@ -18,7 +21,7 @@
         <attribute name="username" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Repository" positionX="-63" positionY="-18" width="128" height="180"/>
+        <element name="Repository" positionX="-63" positionY="-18" width="128" height="225"/>
         <element name="User" positionX="-63" positionY="54" width="128" height="105"/>
     </elements>
 </model>

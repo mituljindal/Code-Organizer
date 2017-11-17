@@ -26,7 +26,6 @@ class WebViewController: UIViewController, WKNavigationDelegate, UIBarPositionin
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         
         let websiteDataTypes = NSSet(array: [WKWebsiteDataTypeDiskCache, WKWebsiteDataTypeMemoryCache])
-        print(websiteDataTypes)
         let date = NSDate(timeIntervalSince1970: 0)
         
         WKWebsiteDataStore.default().removeData(ofTypes: websiteDataTypes as! Set<String>, modifiedSince: date as Date, completionHandler:{ })

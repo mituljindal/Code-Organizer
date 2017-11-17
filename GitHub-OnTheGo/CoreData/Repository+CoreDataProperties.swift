@@ -2,7 +2,7 @@
 //  Repository+CoreDataProperties.swift
 //  
 //
-//  Created by mitul jindal on 16/11/17.
+//  Created by mitul jindal on 17/11/17.
 //
 //
 
@@ -21,9 +21,12 @@ extension Repository {
     @NSManaged public var isPrivate: Bool
     @NSManaged public var language: String?
     @NSManaged public var name: String?
+    @NSManaged public var ownerName: String?
     @NSManaged public var stargazers: Int32
     @NSManaged public var urlString: String?
     @NSManaged public var watchers: Int32
-    @NSManaged public var ownerName: String?
+    @NSManaged public var owned: Bool
+    @NSManaged public var starred: Bool
+    @NSManaged public var bookmarked: Bool
 
 }

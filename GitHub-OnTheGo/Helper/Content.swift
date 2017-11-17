@@ -18,3 +18,7 @@ class Content {
     
     public var content: [Content]?
 }
+
+enum RepoType: String {
+    case owned, starred, bookmarked
+}

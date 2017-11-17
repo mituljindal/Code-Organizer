@@ -11,6 +11,8 @@ import CoreData
 
 class RepositoriesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
+    var type: RepoType!
+    
     @IBOutlet weak var tableView: UITableView!
     var fetchedResultsController : NSFetchedResultsController<NSFetchRequestResult>? {
         didSet {
@@ -29,12 +31,12 @@ class RepositoriesListViewController: UIViewController, UITableViewDelegate, UIT
 //        Setting fetch requests
         let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "Repository")
         fr.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-        
+        fr.predicate = NSPredicate(format: "\(type!) == %@", argumentArray: [true])
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: super.appDelegate.stack.context, sectionNameKeyPath: nil, cacheName: nil)
         
 //        Get repositories
-        github.getRepositories() {
+        github.getRepositories(type: type) {
             self.executeSearch()
         }
     }
