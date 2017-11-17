@@ -30,6 +30,7 @@ class RepositoriesListViewController: UIViewController, UITableViewDelegate, UIT
         let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "Repository")
         fr.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
+        
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: super.appDelegate.stack.context, sectionNameKeyPath: nil, cacheName: nil)
         
 //        Get repositories
