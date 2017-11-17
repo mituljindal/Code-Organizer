@@ -81,6 +81,7 @@ extension GitHubClient {
 
                 if let error = response.error {
                     print("error: \(error)")
+                    return
                 }
                 
                 do {
@@ -183,6 +184,11 @@ extension GitHubClient {
         Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseString() { response in
+                
+                if let error = response.error {
+                    print("error: \(error)")
+                    return
+                }
                 
                 content.text = response.value
                 completion()

@@ -33,6 +33,7 @@ class GitHubNotificationClient: GitHubClient {
                 
                 if let error = response.error {
                     print("error: \(error)")
+                    return
                 }
                 
                 guard let data = response.data else {
