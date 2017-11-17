@@ -8,33 +8,52 @@
 
 import UIKit
 
-class ContentListViewController: UITableViewController {
+class ContentListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var content: Content!
+    let activityIndicator = UIActivityIndicatorView()
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
+        
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.center = self.view.center
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        self.view.addSubview(activityIndicator)
+        
+        self.view.backgroundColor = .githubBackground
         
 //        Get Data
         github.getContent(content: content) {
-            self.tableView.reloadData()
+            self.activityIndicator.stopAnimating()
+            if self.content.content!.count == 0 {
+                self.tableView.isHidden = true
+                self.label.isHidden = false
+            } else {
+                self.tableView.reloadData()
+            }
         }
         
         super.viewDidLoad()
         self.navigationItem.title = content.name
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if content.content!.count == 0 {
+            activityIndicator.startAnimating()
+        }
         return content.content!.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContentCell", for: indexPath)
         
         cell.textLabel?.text = content.content![indexPath.row].name
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
 //        If file
         if content.content![indexPath.row].downloadURL != nil {

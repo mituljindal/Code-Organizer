@@ -11,6 +11,7 @@ import UIKit
 extension UIColor {
 //    Custom color
     static var github = UIColor(red: 37/255, green: 41/255, blue: 46/255, alpha: 1)
+    static var githubBackground = UIColor(red: 50/255, green: 54/255, blue: 59/255, alpha: 1)
 }
 
 extension UIImageView {

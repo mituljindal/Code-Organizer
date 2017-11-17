@@ -20,7 +20,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, UIBarPositionin
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = .github
         webView.navigationDelegate = self
 //        Observer for progress bar
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)

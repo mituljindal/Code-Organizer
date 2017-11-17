@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
 //        Set the background color for all views
-        window?.backgroundColor = .github
+        window?.backgroundColor = UIColor.lightText
         
 //        Status bar color set globally. For this to take effect, View controller-based status bar appearance has to be set to no in info.plist
         UIApplication.shared.statusBarStyle = .lightContent

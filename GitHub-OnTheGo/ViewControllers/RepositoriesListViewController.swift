@@ -12,6 +12,10 @@ import CoreData
 class RepositoriesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
     var type: RepoType!
+    var first = true
+    
+    @IBOutlet weak var label: UILabel!
+    let activityIndicator = UIActivityIndicatorView()
     
     @IBOutlet weak var tableView: UITableView!
     var fetchedResultsController : NSFetchedResultsController<NSFetchRequestResult>? {
@@ -19,11 +23,19 @@ class RepositoriesListViewController: UIViewController, UITableViewDelegate, UIT
             // Whenever the frc changes, we execute the search and reload the table
             fetchedResultsController?.delegate = self
             executeSearch()
+            tableView.reloadData()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = .githubBackground
+        
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.center = self.view.center
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        self.view.addSubview(activityIndicator)
         
         if type == nil {
             type = .bookmarked
@@ -32,10 +44,13 @@ class RepositoriesListViewController: UIViewController, UITableViewDelegate, UIT
         switch type! {
         case .bookmarked:
             self.navigationItem.title = "Bookmarks"
+            label.text = "No Bookmarks"
         case .owned:
             self.navigationItem.title = "Your Repositories"
+            label.text = "No Repositories"
         case .starred:
             self.navigationItem.title = "Starred Repositories"
+            label.text = "No Starred Repositories"
         }
         
 //        Setting fetch requests
@@ -55,12 +70,17 @@ class RepositoriesListViewController: UIViewController, UITableViewDelegate, UIT
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        activityIndicator.hidesWhenStopped = true
         self.executeSearch()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let fc = fetchedResultsController {
+            
+            if fc.sections![section].numberOfObjects == 0  && first {
+                first = false
+                self.activityIndicator.startAnimating()
+            }
             return fc.sections![section].numberOfObjects
         } else {
             return 0
@@ -95,7 +115,15 @@ class RepositoriesListViewController: UIViewController, UITableViewDelegate, UIT
         if let fc = fetchedResultsController {
             do {
                 try fc.performFetch()
-                tableView.reloadData()
+                self.activityIndicator.stopAnimating()
+                if fc.fetchedObjects?.count == 0 {
+                    tableView.isHidden = true
+                    label.isHidden = false
+                } else {
+                    tableView.isHidden = false
+                    label.isHidden = true
+                    tableView.reloadData()
+                }
             } catch let e as NSError {
                 print("Error while trying to perform a search: \n\(e)\n\(fetchedResultsController!)")
             }

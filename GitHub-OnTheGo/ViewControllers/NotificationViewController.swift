@@ -8,23 +8,45 @@
 
 import UIKit
 
-class NotificationViewController: UITableViewController {
+class NotificationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let notificationClient = GitHubNotificationClient.shared
+    let activityIndicator = UIActivityIndicatorView()
+
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.center = self.view.center
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        self.view.addSubview(activityIndicator)
+        
+        label.isHidden = true
+        self.view.backgroundColor = .githubBackground
+        
         notificationClient.getNotifications() {
-            self.tableView.reloadData()
+            self.activityIndicator.stopAnimating()
+            
+            if self.notificationClient.notifications.count == 0 {
+                self.tableView.isHidden = true
+                self.label.isHidden = false
+            } else {
+                self.tableView.reloadData()
+            }
         }
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if notificationClient.notifications.count == 0 {
+            activityIndicator.startAnimating()
+        }
         return notificationClient.notifications.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationCell", for: indexPath)
         
         cell.textLabel?.text = notificationClient.notifications[indexPath.row].title
@@ -35,7 +57,7 @@ class NotificationViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

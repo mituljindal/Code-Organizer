@@ -12,15 +12,23 @@ class ContentDisplayViewController: UIViewController {
     
     @IBOutlet weak var contentTextView: UITextView!
     var content: Content!
+    let activityIndicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = content.name
         
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.center = self.view.center
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        self.view.addSubview(activityIndicator)
+
+        activityIndicator.startAnimating()
+        
 //        Get File content and display
         github.downloadText(content: content) {
-            print("in completion")
+            self.activityIndicator.stopAnimating()
             self.contentTextView.text = self.content.text
         }
     }

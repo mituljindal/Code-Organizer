@@ -8,34 +8,56 @@
 
 import UIKit
 
-class RepositoryDataViewController: UITableViewController {
+class RepositoryDataViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var index: Int!
     var repo: Repository!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    let activityIndicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = repo.getType(index: index)
+        let title = repo.getType(index: index)
+        label.text = "No \(title)"
+        
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.center = self.view.center
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        self.view.addSubview(activityIndicator)
+        
+        self.view.backgroundColor = .githubBackground
+        
+        self.navigationItem.title = title
         
 //        Get Data
         github.getDetails(repo: repo, index: index) {
-            self.tableView.reloadData()
+            self.activityIndicator.stopAnimating()
+            if self.repo.list[self.index]!.count == 0 {
+                self.tableView.isHidden = true
+                self.label.isHidden = false
+            } else {
+                self.tableView.reloadData()
+            }
         }
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if repo.list[index]!.count == 0 {
+            activityIndicator.startAnimating()
+        }
         return repo.list[index]!.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath)
         
         cell.textLabel?.text = repo.list[index]![indexPath.row]
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
