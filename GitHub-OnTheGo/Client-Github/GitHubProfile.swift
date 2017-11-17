@@ -43,12 +43,18 @@ extension GitHubClient {
                 
                 let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
                 
-                let _ = User(json: result, context: self.context)
-                
                 do {
                     try self.context.execute(batchDeleteRequest)
                 } catch {
                     print("couldn't find object")
+                }
+                
+                let _ = User(json: result, context: self.context)
+                
+                do {
+                    try self.context.save()
+                } catch {
+                    print("couldn't save context")
                 }
                 
                 DispatchQueue.main.async {

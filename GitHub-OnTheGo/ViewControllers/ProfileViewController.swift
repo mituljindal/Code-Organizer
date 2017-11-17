@@ -22,8 +22,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             // Whenever the frc changes, we execute the search and reload the table
             fetchedResultsController?.delegate = self
             executeSearch()
-            tableView.reloadData()
-            setViews()
         }
     }
     
@@ -44,6 +42,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: appDelegate.stack.context, sectionNameKeyPath: nil, cacheName: nil)
         
         self.navigationController?.navigationBar.topItem?.title = "GitHub-OnTheGo"
+        
+        tableView.isScrollEnabled = false
     }
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
@@ -65,10 +65,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func setViews() {
-        
+        print("setting views")
         let indexPath = IndexPath(row: 0, section: 0)
         
         if fetchedResultsController?.fetchedObjects?.count == 0 {
+            print("returning")
             return
         }
         
@@ -115,6 +116,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func executeSearch() {
+        print("executing search")
         if let fc = fetchedResultsController {
             do {
                 try fc.performFetch()

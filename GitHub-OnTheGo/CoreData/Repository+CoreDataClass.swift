@@ -38,7 +38,6 @@ public class Repository: NSManagedObject {
                 ownerName = ""
             }
             
-            
         } else {
             fatalError("Unable to find Entity name!")
         }
