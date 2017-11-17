@@ -39,7 +39,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fr.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: appDelegate.stack.context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: github.stack.context, sectionNameKeyPath: nil, cacheName: nil)
         
         self.navigationController?.navigationBar.topItem?.title = "GitHub-OnTheGo"
         

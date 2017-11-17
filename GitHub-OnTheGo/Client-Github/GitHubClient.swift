@@ -15,12 +15,11 @@ class GitHubClient {
     static let sharedInstance = GitHubClient()
     var OAuthToken: String?
     var header: HTTPHeaders!
-    var appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var stack: CoreDataStack
-    var context: NSManagedObjectContext
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    let stack: CoreDataStack!
     
     init() {
         stack = appDelegate.stack
-        context = stack.context
     }
 }

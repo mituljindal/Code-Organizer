@@ -19,26 +19,44 @@ class RepositoriesListViewController: UIViewController, UITableViewDelegate, UIT
             // Whenever the frc changes, we execute the search and reload the table
             fetchedResultsController?.delegate = self
             executeSearch()
-            tableView.reloadData()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Repositories"
+        if type == nil {
+            type = .bookmarked
+        }
+        
+        switch type! {
+        case .bookmarked:
+            self.navigationItem.title = "Bookmarks"
+        case .owned:
+            self.navigationItem.title = "Your Repositories"
+        case .starred:
+            self.navigationItem.title = "Starred Repositories"
+        }
         
 //        Setting fetch requests
         let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "Repository")
         fr.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         fr.predicate = NSPredicate(format: "\(type!) == %@", argumentArray: [true])
         
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: super.appDelegate.stack.context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: github.stack.context, sectionNameKeyPath: nil, cacheName: nil)
         
-//        Get repositories
-        github.getRepositories(type: type) {
-            self.executeSearch()
+        if type! != .bookmarked {
+//            Get repositories
+            github.getRepositories(type: type) {
+                self.executeSearch()
+            }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.executeSearch()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

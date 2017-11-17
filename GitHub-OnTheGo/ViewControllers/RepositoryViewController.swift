@@ -25,6 +25,8 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var launch = true
     
+    let saveButton = UIBarButtonItem(image: UIImage(named: "icons8-repository"), style: .plain, target: nil, action: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,8 +42,18 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
         
         tableView.bounces = false
         
+        if repo.bookmarked {
+            saveButton.image =  UIImage(named: "icons8-repository-2")
+        } else {
+            saveButton.image =  UIImage(named: "icons8-repository")
+        }
         
         self.navigationItem.title = repo.name
+        self.navigationItem.rightBarButtonItem = saveButton
+        
+        saveButton.target = self
+        saveButton.action = #selector(saveButtonPressed)
+        
 //        For detail views data initialization
         repo.custInit()
     }
@@ -62,6 +74,29 @@ class RepositoryViewController: UIViewController, UITableViewDelegate, UITableVi
         publicTextView.centerTextVertically()
         languageTextView.centerTextVertically()
         ownerTextView.centerTextVertically()
+    }
+    
+    @objc func saveButtonPressed() {
+        if repo.bookmarked {
+            repo.bookmarked = false
+            saveButton.image =  UIImage(named: "icons8-repository")
+            
+            if !repo.starred && !repo.owned {
+                github.stack.context.delete(repo)
+            }
+            
+        } else {
+            repo.bookmarked = true
+            saveButton.image =  UIImage(named: "icons8-repository-2")
+            if repo.managedObjectContext == nil {
+                github.stack.context.insert(repo)
+            }
+        }
+        do {
+            try github.stack.context.save()
+        } catch {
+            print("Couldn't save context")
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

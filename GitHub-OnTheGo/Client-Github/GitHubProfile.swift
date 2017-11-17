@@ -44,15 +44,15 @@ extension GitHubClient {
                 let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
                 
                 do {
-                    try self.context.execute(batchDeleteRequest)
+                    try self.stack.context.execute(batchDeleteRequest)
                 } catch {
                     print("couldn't find object")
                 }
                 
-                let _ = User(json: result, context: self.context)
+                let _ = User(json: result, context: self.stack.context)
                 
                 do {
-                    try self.context.save()
+                    try self.stack.context.save()
                 } catch {
                     print("couldn't save context")
                 }
@@ -77,7 +77,7 @@ extension GitHubClient {
         var batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
         do {
-            try self.context.execute(batchDeleteRequest)
+            try self.stack.context.execute(batchDeleteRequest)
         } catch {
             print("couldn't find Repository")
         }
@@ -86,7 +86,7 @@ extension GitHubClient {
         batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
         do {
-            try self.context.execute(batchDeleteRequest)
+            try self.stack.context.execute(batchDeleteRequest)
         } catch {
             print("couldn't find User")
         }

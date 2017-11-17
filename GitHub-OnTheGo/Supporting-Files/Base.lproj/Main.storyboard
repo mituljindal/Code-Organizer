@@ -81,7 +81,7 @@
                                 <color key="barTintColor" red="0.14509803921568626" green="0.16078431372549018" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="Lpd-Oz-hY4">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Bgh-lT-W7T">
+                                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="Bgh-lT-W7T">
                                             <connections>
                                                 <action selector="cancelPressed:" destination="kmo-BB-UcE" id="8HX-AN-CgO"/>
                                             </connections>
@@ -251,18 +251,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q7L-iR-vTi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1786.4000000000001" y="44.527736131934034"/>
+            <point key="canvasLocation" x="1793" y="742"/>
         </scene>
         <!--Repositories-->
         <scene sceneID="NpH-qk-ybh">
             <objects>
                 <viewController storyboardIdentifier="RepositoriesListViewController" id="Vot-4n-bNX" customClass="RepositoriesListViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WlR-4j-Abg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r8e-jg-gTo">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepoCell" textLabel="as7-Oe-IgR" detailTextLabel="w7x-O9-jbX" style="IBUITableViewCellStyleSubtitle" id="UDo-lT-wVG">
@@ -305,7 +305,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JFC-6s-ZFL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Repositories" image="icons8-repository" selectedImage="icons8-repository-2" id="X0Q-bV-wEp"/>
+                    <tabBarItem key="tabBarItem" title="Bookmarks" image="icons8-repository" selectedImage="icons8-repository-2" id="X0Q-bV-wEp"/>
                     <navigationItem key="navigationItem" title="Repositories" id="JGZ-se-b1D"/>
                     <connections>
                         <outlet property="tableView" destination="r8e-jg-gTo" id="014-IG-IDY"/>
@@ -313,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D10-TL-Vse" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1772" y="738"/>
+            <point key="canvasLocation" x="1791" y="58"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="khm-w5-a1U">
@@ -512,7 +512,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KNb-SS-cCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2512.8000000000002" y="738.98050974512751"/>
+            <point key="canvasLocation" x="3318" y="744"/>
         </scene>
         <!--Repository Data View Controller-->
         <scene sceneID="WWI-aw-6r6">
@@ -540,7 +540,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95f-oo-Zsg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3222" y="740"/>
+            <point key="canvasLocation" x="4026" y="745"/>
         </scene>
         <!--Content Display View Controller-->
         <scene sceneID="8ZZ-1h-ghq">
@@ -572,7 +572,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Lj-cs-bsQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4646" y="742"/>
+            <point key="canvasLocation" x="5450" y="746"/>
         </scene>
         <!--Content List View Controller-->
         <scene sceneID="N3R-J0-YDv">
@@ -600,7 +600,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSF-f5-OXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3943" y="744"/>
+            <point key="canvasLocation" x="4746" y="748"/>
         </scene>
         <!--Item-->
         <scene sceneID="MBx-ss-3ZR">
@@ -653,6 +653,7 @@
                         <segue destination="XCu-y2-7nh" kind="relationship" relationship="viewControllers" id="dRV-3h-sWk"/>
                         <segue destination="5AS-ph-P76" kind="relationship" relationship="viewControllers" id="Bpc-Nz-veM"/>
                         <segue destination="eJk-cf-byK" kind="relationship" relationship="viewControllers" id="yiQ-4n-cfi"/>
+                        <segue destination="Vot-4n-bNX" kind="relationship" relationship="viewControllers" id="Wef-35-zTt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LjH-lK-Fjh" userLabel="First Responder" sceneMemberID="firstResponder"/>

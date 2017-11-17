@@ -45,7 +45,7 @@ extension GitHubClient {
                 let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
                 
                 do {
-                    try self.context.execute(batchDeleteRequest)
+                    try self.stack.context.execute(batchDeleteRequest)
                 } catch {
                     print("couldn't find object")
                 }
@@ -54,7 +54,7 @@ extension GitHubClient {
                     let results = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [[String: Any]]
                     
                     for result in results {
-                        let _ = Repository(json: result, save: true, type: type, context: self.context)
+                        let _ = Repository(json: result, save: true, type: type, context: self.stack.context)
                     }
                     do {
                         try self.stack.saveContext()
