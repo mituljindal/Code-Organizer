@@ -25,8 +25,14 @@ class ContentListViewController: UIViewController, UITableViewDelegate, UITableV
         self.view.backgroundColor = .githubBackground
         
 //        Get Data
-        github.getContent(content: content) {
+        github.getContent(content: content) { error in
             self.activityIndicator.stopAnimating()
+            
+            if let _ = error {
+                self.presentAlert(title: "Error Occurred", error: "Please try again!")
+                return
+            }
+            
             if self.content.content!.count == 0 {
                 self.tableView.isHidden = true
                 self.label.isHidden = false

@@ -71,21 +71,29 @@ extension GitHubClient {
             }
     }
     
-    func getDetails(repo: Repository, index: Int, completion: @escaping () -> ()) {
+    func getDetails(repo: Repository, index: Int, completion: @escaping (_ error: Bool?) -> ()) {
 
         let url = repo.urlString! + repo.getUrlPath(index)
 
         Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseJSON() { response in
+                
+                func sendError() {
+                    DispatchQueue.main.async {
+                        completion(true)
+                    }
+                }
 
                 if let error = response.error {
                     print("error: \(error)")
+                    sendError()
                     return
                 }
                 
                 do {
                     guard let data = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as? [[String: Any]] else {
+                        sendError()
                         return
                     }
                     
@@ -108,24 +116,17 @@ extension GitHubClient {
                         for item in data {
                             list.append(item["title"] as? String ?? "")
                         }
-//                    case 4:
-//                        for item in data {
-//                            let str = item["name"] as? String ?? ""
-//                            list.append(str)
-//
-//                            let x = self.parseContent(item: item)
-//
-//                            repo.content[str] = x
-//                        }
                     default:
-                        fatalError("Extraneous index")
+                        print("Extraneous index")
+                        sendError()
                     }
                     
                     repo.list[index] = list
                     DispatchQueue.main.async {
-                        completion()
+                        completion(nil)
                     }
                 } catch {
+                    sendError()
                     return
                 }
                 
@@ -133,7 +134,7 @@ extension GitHubClient {
             }
     }
     
-    func getContent(content: Content, completion: @escaping () -> ()) {
+    func getContent(content: Content, completion: @escaping (_ error: Bool?) -> ()) {
         
         let url = content.url!
         
@@ -141,12 +142,20 @@ extension GitHubClient {
             .validate()
             .responseJSON() { response in
                 
+                func sendError() {
+                    DispatchQueue.main.async {
+                        completion(true)
+                    }
+                }
+                
                 if let error = response.error {
                     print("error: \(error)")
+                    sendError()
                     return
                 }
                 
                 guard let data = response.data else {
+                    sendError()
                     print("no data")
                     return
                 }
@@ -157,6 +166,7 @@ extension GitHubClient {
                     result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [[String: Any]]
                 } catch {
                     print("couldn't convert data")
+                    sendError()
                     return
                 }
                 
@@ -172,12 +182,12 @@ extension GitHubClient {
                 }
                 
                 DispatchQueue.main.async {
-                    completion()
+                    completion(nil)
                 }
         }
     }
     
-    func downloadText(content: Content, completion: @escaping () -> ()) {
+    func downloadText(content: Content, completion: @escaping (_ error: Bool?) -> ()) {
         
         let url = content.downloadURL!
         
@@ -185,13 +195,22 @@ extension GitHubClient {
             .validate()
             .responseString() { response in
                 
+                func sendError() {
+                    DispatchQueue.main.async {
+                        completion(true)
+                    }
+                }
+                
                 if let error = response.error {
+                    sendError()
                     print("error: \(error)")
                     return
                 }
                 
                 content.text = response.value
-                completion()
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
         }
     }
 }

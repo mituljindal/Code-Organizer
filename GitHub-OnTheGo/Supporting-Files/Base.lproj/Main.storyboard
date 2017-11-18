@@ -265,7 +265,7 @@
                                 <rect key="frame" x="83.5" y="214.5" width="207" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="JBJ-xY-PIF"/>
-                                    <constraint firstAttribute="width" constant="207" id="RAL-wU-96v"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="207" id="RAL-wU-96v"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="No Content">
@@ -366,6 +366,7 @@
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSK-ok-8Jt">
                                 <rect key="frame" x="43.5" y="226" width="288" height="102"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="288" id="JL0-Vg-3Er"/>
                                     <constraint firstAttribute="height" constant="102" id="okP-9W-yDh"/>
                                 </constraints>
                                 <attributedString key="attributedText">
@@ -566,9 +567,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUV-qD-R69">
-                                <rect key="frame" x="84" y="292.5" width="207" height="102"/>
+                                <rect key="frame" x="62.5" y="292.5" width="250" height="102"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="102" id="LT2-j3-8RH"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="xTb-3I-j3C"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="No Content">
@@ -663,9 +665,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Skq-97-hwA">
-                                <rect key="frame" x="84" y="292.5" width="207" height="102"/>
+                                <rect key="frame" x="62.5" y="292.5" width="250" height="102"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="102" id="N7y-gC-Q7Y"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="sAC-CP-ZBA"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="No Content">

@@ -23,7 +23,7 @@ class GitHubNotificationClient: GitHubClient {
     
     var notifications = [Notification]()
     
-    func getNotifications(completion: @escaping () -> ()) {
+    func getNotifications(completion: @escaping (_ error: Bool?) -> ()) {
         
         let url = API.url + "/notifications?all=true"
         
@@ -31,13 +31,21 @@ class GitHubNotificationClient: GitHubClient {
             .validate()
             .responseJSON() { response in
                 
+                func sendError() {
+                    DispatchQueue.main.async {
+                        completion(true)
+                    }
+                }
+                
                 if let error = response.error {
                     print("error: \(error)")
+                    sendError()
                     return
                 }
                 
                 guard let data = response.data else {
                     print("couldn't get data")
+                    sendError()
                     return
                 }
                 
@@ -46,6 +54,7 @@ class GitHubNotificationClient: GitHubClient {
                     results = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [[String : Any]]
                 } catch {
                     print("Couldn't parse data")
+                    sendError()
                     return
                 }
                 
@@ -67,7 +76,7 @@ class GitHubNotificationClient: GitHubClient {
                     self.notifications.append(notification)
                 }
                 DispatchQueue.main.async {
-                    completion()
+                    completion(nil)
                 }
         }
     }

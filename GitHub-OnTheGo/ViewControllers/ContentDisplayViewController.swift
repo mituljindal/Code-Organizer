@@ -27,8 +27,14 @@ class ContentDisplayViewController: UIViewController {
         activityIndicator.startAnimating()
         
 //        Get File content and display
-        github.downloadText(content: content) {
+        github.downloadText(content: content) { error in
             self.activityIndicator.stopAnimating()
+            
+            if let _ = error {
+                self.presentAlert(title: "An Error Occurred", error: "Please try again")
+                return
+            }
+            
             self.contentTextView.text = self.content.text
         }
     }

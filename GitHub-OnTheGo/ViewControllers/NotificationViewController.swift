@@ -27,8 +27,13 @@ class NotificationViewController: UIViewController, UITableViewDataSource, UITab
         label.isHidden = true
         self.view.backgroundColor = .githubBackground
         
-        notificationClient.getNotifications() {
+        notificationClient.getNotifications() { error in
             self.activityIndicator.stopAnimating()
+            
+            if let _ = error {
+                self.presentAlert(title: "An error occured", error: "Please try again!")
+                return
+            }
             
             if self.notificationClient.notifications.count == 0 {
                 self.tableView.isHidden = true

@@ -15,7 +15,7 @@ class GitHubSearchClient: GitHubClient {
     static var shared = GitHubSearchClient()
     let github = GitHubClient.sharedInstance
     
-    func searchRepositories(query: String, completion: @escaping () -> ()) {
+    func searchRepositories(query: String, completion: @escaping (_ error: Bool?) -> ()) {
         
         let url = API.url + "/search/repositories?q=\(query)"
         
@@ -23,13 +23,21 @@ class GitHubSearchClient: GitHubClient {
             .validate()
             .responseJSON() { response in
                 
+                func sendError() {
+                    DispatchQueue.main.async {
+                        completion(true)
+                    }
+                }
+                
                 if let error = response.error {
                     print("error: \(error)")
+                    sendError()
                     return
                 }
                 
                 guard let data = response.data else {
                     print("Can't convert any to Data")
+                    sendError()
                     return
                 }
                 
@@ -38,6 +46,7 @@ class GitHubSearchClient: GitHubClient {
                     
                     guard let items = results["items"] as? [[String: Any]] else {
                         print("no items")
+                        sendError()
                         return
                     }
                     
@@ -49,10 +58,11 @@ class GitHubSearchClient: GitHubClient {
                     }
                     
                     DispatchQueue.main.async {
-                        completion()
+                        completion(nil)
                     }
                     
                 } catch {
+                    sendError()
                     return
                 }
         }

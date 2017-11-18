@@ -32,8 +32,14 @@ class RepositoryDataViewController: UIViewController, UITableViewDelegate, UITab
         self.navigationItem.title = title
         
 //        Get Data
-        github.getDetails(repo: repo, index: index) {
+        github.getDetails(repo: repo, index: index) { error in
             self.activityIndicator.stopAnimating()
+            
+            if let _ = error {
+                self.presentAlert(title: "Error Occurred", error: "Please try again!")
+                return
+            }
+            
             if self.repo.list[self.index]!.count == 0 {
                 self.tableView.isHidden = true
                 self.label.isHidden = false
