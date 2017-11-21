@@ -17,8 +17,8 @@ public class User: NSManagedObject {
         if let ent = NSEntityDescription.entity(forEntityName: "User", in: context) {
             self.init(entity: ent, insertInto: context)
             
-            self.name = (json["name"] as! String)
-            self.username = (json["login"] as! String)
+            self.name = json["name"] as? String
+            self.username = json["login"] as? String
             self.email = json["email"] as? String
             self.imageURL = json["avatar_url"] as? String
             

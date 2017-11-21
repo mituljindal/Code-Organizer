@@ -73,8 +73,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let user = fetchedResultsController!.object(at: indexPath) as! User
         
-        nameTextView.text = user.name!
-        usernameTextView.text = user.username!
+        nameTextView.text = user.name ?? "No Name Saved"
+        usernameTextView.text = user.username ?? ""
         emailIDTextView.text = user.email ?? "Email not available"
         
         if let url = user.imageURL {
