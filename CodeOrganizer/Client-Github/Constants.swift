@@ -12,8 +12,8 @@ extension GitHubClient {
     
     enum AuthValues {
         static let authURL = "https://github.com/login/oauth/authorize"
-        static let clientID = "533cf4d79f5d2dc0b5c4"
-        static let clientSecret = "d8af8c5ade15e7deb85186d103c47ff127ce33d8"
+        static let clientID = "149e5e8d655d7b09f216"
+        static let clientSecret = "0d74cc84423eb142ab7dcf175fa5c85c9c5b22e0"
         static let redirectURL = "https://github-onthego.firebaseapp.com/__/auth/handler"
         static let state = "hakunaMatata"
         static let allowSignUp = "true"
