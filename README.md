@@ -1,4 +1,4 @@
-## OnTheGo-GitHub
+## CodeOrganizer
 
 This app is for creating an ease of viewing the repositories on GitHub.
 
