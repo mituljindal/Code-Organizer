@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="CodeOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +37,7 @@
                                     <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4xB-Nt-EGL"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gh_180" translatesAutoresizingMaskIntoConstraints="NO" id="dPu-1Q-xAS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gh_180-1" translatesAutoresizingMaskIntoConstraints="NO" id="dPu-1Q-xAS">
                                 <rect key="frame" x="97.5" y="86" width="180" height="180"/>
                             </imageView>
                         </subviews>
@@ -59,7 +58,7 @@
         <!--Web View Controller-->
         <scene sceneID="ocB-L8-PR5">
             <objects>
-                <viewController storyboardIdentifier="WebViewController" id="kmo-BB-UcE" customClass="WebViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewController" id="kmo-BB-UcE" customClass="WebViewController" customModule="CodeOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pQ8-9j-RqA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,7 +122,7 @@
         <!--Profile-->
         <scene sceneID="IGC-PK-ky2">
             <objects>
-                <viewController id="XCu-y2-7nh" customClass="ProfileViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XCu-y2-7nh" customClass="ProfileViewController" customModule="CodeOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Mm-Cu-ySC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,7 +134,7 @@
                                     <constraint firstAttribute="width" constant="125" id="djn-Ch-m6C"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aT-Pp-tiB" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aT-Pp-tiB" customClass="CustomUITextView" customModule="CodeOrganizer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="165" width="375" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -144,7 +143,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrm-1Y-YnW" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrm-1Y-YnW" customClass="CustomUITextView" customModule="CodeOrganizer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="195" width="375" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -153,7 +152,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxs-6M-60X" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxs-6M-60X" customClass="CustomUITextView" customModule="CodeOrganizer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="225" width="375" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -256,7 +255,7 @@
         <!--Repositories-->
         <scene sceneID="NpH-qk-ybh">
             <objects>
-                <viewController storyboardIdentifier="RepositoriesListViewController" id="Vot-4n-bNX" customClass="RepositoriesListViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RepositoriesListViewController" id="Vot-4n-bNX" customClass="RepositoriesListViewController" customModule="CodeOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WlR-4j-Abg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -340,7 +339,7 @@
         <!--Notifications-->
         <scene sceneID="wX8-1Q-5Jb">
             <objects>
-                <viewController storyboardIdentifier="NotificationViewController" id="Vcu-ss-uIC" customClass="NotificationViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotificationViewController" id="Vcu-ss-uIC" customClass="NotificationViewController" customModule="CodeOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M9l-Ld-R5g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -407,7 +406,7 @@
         <!--Search-->
         <scene sceneID="L5c-HK-vbA">
             <objects>
-                <tableViewController storyboardIdentifier="SearchViewController" id="5AS-ph-P76" customClass="SearchViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SearchViewController" id="5AS-ph-P76" customClass="SearchViewController" customModule="CodeOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IhX-8N-4li">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -437,7 +436,7 @@
         <!--Repository View Controller-->
         <scene sceneID="W27-dr-2hk">
             <objects>
-                <viewController storyboardIdentifier="RepositoryView" id="VmH-mS-Ec7" customClass="RepositoryViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RepositoryView" id="VmH-mS-Ec7" customClass="RepositoryViewController" customModule="CodeOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KTO-2s-ra5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -463,7 +462,7 @@
                                     <outlet property="delegate" destination="VmH-mS-Ec7" id="H7C-vO-Lsu"/>
                                 </connections>
                             </tableView>
-                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbE-Y4-4II" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbE-Y4-4II" customClass="CustomUITextView" customModule="CodeOrganizer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="430" width="375" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -472,7 +471,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6A0-7I-LPA" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6A0-7I-LPA" customClass="CustomUITextView" customModule="CodeOrganizer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="125" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -481,7 +480,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfe-gh-dOl" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfe-gh-dOl" customClass="CustomUITextView" customModule="CodeOrganizer" customModuleProvider="target">
                                 <rect key="frame" x="125" y="20" width="125" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -490,7 +489,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twr-G6-65o" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twr-G6-65o" customClass="CustomUITextView" customModule="CodeOrganizer" customModuleProvider="target">
                                 <rect key="frame" x="250" y="20" width="125" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -499,7 +498,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sb-6a-QJA" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sb-6a-QJA" customClass="CustomUITextView" customModule="CodeOrganizer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="90" width="187.5" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -508,7 +507,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbf-HU-pFj" customClass="CustomUITextView" customModule="GitHub_OnTheGo" customModuleProvider="target">
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbf-HU-pFj" customClass="CustomUITextView" customModule="CodeOrganizer" customModuleProvider="target">
                                 <rect key="frame" x="187.5" y="90" width="187.5" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -561,7 +560,7 @@
         <!--Repository Data View Controller-->
         <scene sceneID="etb-Sj-D9q">
             <objects>
-                <viewController storyboardIdentifier="RepositoryDataViewController" id="SWR-Tn-q07" customClass="RepositoryDataViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RepositoryDataViewController" id="SWR-Tn-q07" customClass="RepositoryDataViewController" customModule="CodeOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cbs-93-uev">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -627,7 +626,7 @@
         <!--Content Display View Controller-->
         <scene sceneID="8ZZ-1h-ghq">
             <objects>
-                <viewController storyboardIdentifier="ContentDisplayViewController" id="mzd-dT-AcS" customClass="ContentDisplayViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentDisplayViewController" id="mzd-dT-AcS" customClass="ContentDisplayViewController" customModule="CodeOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PS8-2k-ptM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -659,7 +658,7 @@
         <!--Content List View Controller-->
         <scene sceneID="txt-Ko-WUX">
             <objects>
-                <viewController storyboardIdentifier="ContentListViewController" id="6b6-nG-6Oc" customClass="ContentListViewController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentListViewController" id="6b6-nG-6Oc" customClass="ContentListViewController" customModule="CodeOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cSO-Dk-EsR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -725,7 +724,7 @@
         <!--Item-->
         <scene sceneID="MBx-ss-3ZR">
             <objects>
-                <navigationController storyboardIdentifier="loggedIn" automaticallyAdjustsScrollViewInsets="NO" id="Dn4-u9-i1r" customClass="CustomNavigationController" customModule="GitHub_OnTheGo" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="loggedIn" automaticallyAdjustsScrollViewInsets="NO" id="Dn4-u9-i1r" customClass="CustomNavigationController" customModule="CodeOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="2iT-qa-yGX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="72G-s2-NJe">
@@ -782,7 +781,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gh_180" width="180" height="180"/>
+        <image name="gh_180-1" width="180" height="180"/>
         <image name="icons8-github-2" width="50" height="50"/>
         <image name="icons8-notification" width="25" height="25"/>
         <image name="icons8-notification-2" width="25" height="25"/>
