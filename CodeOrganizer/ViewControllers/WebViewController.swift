@@ -25,10 +25,14 @@ class WebViewController: UIViewController, WKNavigationDelegate, UIBarPositionin
 //        Observer for progress bar
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         
-        let websiteDataTypes = NSSet(array: [WKWebsiteDataTypeDiskCache, WKWebsiteDataTypeMemoryCache])
-        let date = NSDate(timeIntervalSince1970: 0)
-        
-        WKWebsiteDataStore.default().removeData(ofTypes: websiteDataTypes as! Set<String>, modifiedSince: date as Date, completionHandler:{ })
+        let dataStore = WKWebsiteDataStore.default()
+        dataStore.fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { (records) in
+            for record in records {
+                    dataStore.removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), for: [record], completionHandler: {
+                        print("Deleted: " + record.displayName);
+                    })
+            }
+        }
         
         request = URLRequest(url: url)
         webView.load(request)
