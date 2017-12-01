@@ -67,14 +67,6 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="20e-wD-j5V">
                                 <rect key="frame" x="0.0" y="64" width="375" height="2"/>
                             </progressView>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-CB-I3h">
-                                <rect key="frame" x="0.0" y="66" width="375" height="601"/>
-                                <color key="backgroundColor" red="0.16078239679336548" green="0.16078302264213562" blue="0.16078439354896545" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYp-WX-W8Z">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="backgroundColor" red="0.14509803921568626" green="0.16078431372549018" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -93,13 +85,9 @@
                         <constraints>
                             <constraint firstItem="20e-wD-j5V" firstAttribute="top" secondItem="gYp-WX-W8Z" secondAttribute="bottom" id="4VK-qr-pJs"/>
                             <constraint firstItem="gYp-WX-W8Z" firstAttribute="top" secondItem="aja-oO-6Sc" secondAttribute="top" id="9qw-eQ-gHb"/>
-                            <constraint firstAttribute="trailing" secondItem="jFJ-CB-I3h" secondAttribute="trailing" id="GKw-yk-Goh"/>
                             <constraint firstAttribute="trailing" secondItem="gYp-WX-W8Z" secondAttribute="trailing" id="I0k-vX-VVS"/>
                             <constraint firstItem="20e-wD-j5V" firstAttribute="leading" secondItem="pQ8-9j-RqA" secondAttribute="leading" id="JLu-fC-9N3"/>
-                            <constraint firstAttribute="bottom" secondItem="jFJ-CB-I3h" secondAttribute="bottom" id="PRs-4Q-Skh"/>
-                            <constraint firstItem="jFJ-CB-I3h" firstAttribute="leading" secondItem="aja-oO-6Sc" secondAttribute="leading" id="cHs-gI-0HQ"/>
                             <constraint firstItem="gYp-WX-W8Z" firstAttribute="leading" secondItem="aja-oO-6Sc" secondAttribute="leading" id="o0x-cb-qLP"/>
-                            <constraint firstItem="jFJ-CB-I3h" firstAttribute="top" secondItem="gYp-WX-W8Z" secondAttribute="bottom" constant="2" id="pZj-Nj-tfS"/>
                             <constraint firstAttribute="trailing" secondItem="20e-wD-j5V" secondAttribute="trailing" id="s1f-DR-1Mh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aja-oO-6Sc"/>
@@ -113,7 +101,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="progressView" destination="20e-wD-j5V" id="LDG-nd-yBu"/>
-                        <outlet property="webView" destination="jFJ-CB-I3h" id="hTQ-oJ-Ybj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Eg-yX-dpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -262,10 +249,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcd-mP-oHx">
-                                <rect key="frame" x="83.5" y="214.5" width="207" height="125"/>
+                                <rect key="frame" x="60" y="214.5" width="255" height="125"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="JBJ-xY-PIF"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="207" id="RAL-wU-96v"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="125" id="JBJ-xY-PIF"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="No Content">
@@ -318,7 +304,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Wcd-mP-oHx" firstAttribute="centerX" secondItem="JFC-6s-ZFL" secondAttribute="centerX" id="7DH-o0-BrL"/>
+                            <constraint firstItem="JFC-6s-ZFL" firstAttribute="trailing" secondItem="Wcd-mP-oHx" secondAttribute="trailing" constant="60" id="G8H-1P-P9r"/>
                             <constraint firstItem="JFC-6s-ZFL" firstAttribute="bottom" secondItem="r8e-jg-gTo" secondAttribute="bottom" id="Uw1-ya-4a7"/>
+                            <constraint firstItem="Wcd-mP-oHx" firstAttribute="leading" secondItem="JFC-6s-ZFL" secondAttribute="leading" constant="60" id="g8U-tH-kQD"/>
                             <constraint firstItem="r8e-jg-gTo" firstAttribute="leading" secondItem="JFC-6s-ZFL" secondAttribute="leading" id="gqb-du-cQM"/>
                             <constraint firstItem="Wcd-mP-oHx" firstAttribute="centerY" secondItem="JFC-6s-ZFL" secondAttribute="centerY" id="rKx-CP-Zsy"/>
                             <constraint firstItem="JFC-6s-ZFL" firstAttribute="trailing" secondItem="r8e-jg-gTo" secondAttribute="trailing" id="ret-M6-Drh"/>

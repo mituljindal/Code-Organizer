@@ -29,7 +29,7 @@ extension GitHubClient {
     func getAuthUrl() -> URL {
         var urlString = AuthValues.authURL + "?" + AuthKeys.clientID + "=" + AuthValues.clientID
         urlString = "\(urlString)&\(AuthKeys.redirectURL)=\(AuthValues.redirectURL)&\(AuthKeys.state)=\(AuthValues.state)"
-        urlString += "&scope=repo,admin:org,admin:public_key,user,delete_repo"
+        urlString += "&scope=repo,user"
         return URL(string: urlString)!
     }
     

@@ -91,6 +91,12 @@ extension GitHubClient {
             print("couldn't find User")
         }
         
+        do {
+            try self.stack.context.save()
+        } catch {
+            print("couldn't save context")
+        }
+        
         completion()
     }
 }

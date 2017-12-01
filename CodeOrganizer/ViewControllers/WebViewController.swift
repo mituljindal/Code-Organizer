@@ -10,16 +10,31 @@ import UIKit
 import WebKit
 import Alamofire
 
-class WebViewController: UIViewController, WKNavigationDelegate, UIBarPositioningDelegate {
+class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UIBarPositioningDelegate {
     
-    @IBOutlet weak var webView: WKWebView!
+//    @IBOutlet weak var webView: WKWebView!
+    var webView: WKWebView!
     @IBOutlet weak var progressView: UIProgressView!
     
     var url: URL!
     var request: URLRequest!
     
+    func setupWebView() {
+        let webConfiguration = WKWebViewConfiguration()
+        
+        webView = WKWebView(frame:.zero , configuration: webConfiguration)
+        webView.uiDelegate = self
+//        view = webView
+        view.addSubview(webView)
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":webView]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[v1][v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":webView, "v1":progressView]))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupWebView()
         self.view.backgroundColor = .github
         webView.navigationDelegate = self
 //        Observer for progress bar
@@ -50,7 +65,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, UIBarPositionin
         if (keyPath == "estimatedProgress") {
 //            Associating progress bar with webview progress
             progressView.isHidden = webView.estimatedProgress == 1
-            progressView.setProgress(Float(webView.estimatedProgress), animated: true)
+            progressView.setProgress(Float(webView.estimatedProgress), animated: false)
         }
     }
     
